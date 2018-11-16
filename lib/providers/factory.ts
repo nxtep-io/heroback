@@ -1,5 +1,5 @@
 import { BaseError } from "ts-framework-common";
-import HerobackProvider from "../provider";
+import HerobackProvider from "./base";
 import PostgresProvider from "./postgres";
 
 export const providerFactory = (name: string): HerobackProvider =>  {
