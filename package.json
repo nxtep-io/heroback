@@ -1,7 +1,7 @@
 {
   "name": "heroback",
   "version": "3.0.0-alpha.1",
-  "description": "A minimalistic backup tool",
+  "description": "A database agnostic backup tool",
   "author": "Luis Brito <luis@nxtep.io>",
   "license": "MIT",
   "main": "./dist/index.js",
