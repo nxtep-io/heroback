@@ -56,5 +56,9 @@
     "tslint-no-circular-imports": "^0.5.0",
     "typedoc": "^0.13.0",
     "typescript": "^3.1.2"
+  },
+  "optionalDependencies": {
+    "@google-cloud/storage": "^2.3.1",
+    "aws-sdk": "^2.357.0"
   }
 }
