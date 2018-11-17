@@ -17,7 +17,27 @@
       "args": [
         "${workspaceFolder}/bin/heroback.ts",
         "dump",
-        "mongo://localhost/admin"
+        "mongo://localhost/test"
+      ],
+      "env": {},
+      "sourceMaps": true,
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "dump (ts-node/postgres)",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+      ],
+      "args": [
+        "${workspaceFolder}/bin/heroback.ts",
+        "dump",
+        "postgres://localhost/test"
       ],
       "env": {},
       "sourceMaps": true,

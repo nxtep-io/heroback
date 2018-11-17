@@ -8,13 +8,20 @@ An agnostic database backup tool.
 
 ```bash
 # Add to your dependencies using yarn
-yarn add "nxtep-io/heroback#master";
+yarn global add "nxtep-io/heroback#master";
 
 # Or, using NPM
-npm install "github:nxtep-io/heroback#master";
+npm install --global "github:nxtep-io/heroback#master";
 ```
 
-## TLDR
+Then, just call it from the command line.
+
+```bash
+# Minimal configuration takes only the database connection URL
+heroback dump <url>
+```
+
+## Available providers
 
 Heroback will try to understand the supplied connection URI to use one of the available providers in the library and dump its content to a file.
 
