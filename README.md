@@ -18,7 +18,7 @@ Then, just call it from the command line.
 
 ```bash
 # Minimal configuration takes only the database connection URL
-heroback dump <url>
+heroback dump "<url>"
 ```
 
 ## Available providers
