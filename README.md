@@ -45,8 +45,15 @@ Heroback will try to understand the supplied connection URI to use one of the av
 
 * **Amazon S3**: Streams the dump output to a S3 bucket in AWS.
 
+    This exporter requires the ```aws-sdk``` module and its environment variables.
+
+    Remember to add it using NPM or Yarn: ```yarn global add aws-sdk```
+
 * **Google GCS**: Streams the dump output to a Google Cloud Storage.
 
+    This exporter requires the ```@google/storage``` module and its environment variables.
+
+    Remember to add it using NPM or Yarn: ```yarn global add @google/storage```
 
 ## Examples
 
