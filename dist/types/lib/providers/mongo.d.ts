@@ -5,7 +5,7 @@ import { HerobackProvider, DumpOptions } from '../base';
 import { UriParamsSchema } from '../utils';
 export default class MongoProvider extends HerobackProvider {
     ext: string;
-    uriDefaults: Partial<UriParamsSchema>;
+    uriDefaults(): Partial<UriParamsSchema>;
     /**
      * Dumps the desired database using mongodump child process.
      */

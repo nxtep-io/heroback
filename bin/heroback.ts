@@ -27,7 +27,7 @@ export default class HerobackBin {
     try {
       const dump = await heroback.dump({
         uri,
-        gzip: false,
+        gzip: !cmd.gzip,
         baseDir: cmd.path || process.cwd(),
         exporter: cmd.exporter || 'file',
         provider: cmd.provider || 'postgres',
