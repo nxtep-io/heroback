@@ -43,13 +43,13 @@ Heroback will try to understand the supplied connection URI to use one of the av
 
 * **File** (Default): Streams the dump output to a local file.
 
-* **Amazon S3**: Streams the dump output to a S3 bucket in AWS.
+* **Amazon S3**: Streams the dump output to a S3 bucket in AWS. Checkout the [sample script](https://github.com/nxtep-io/heroback/blob/master/samples/pg_aws_dump.ts).
 
     This exporter requires the ```aws-sdk``` module and its environment variables.
 
     Remember to add it using NPM or Yarn: ```yarn global add aws-sdk```
 
-* **Google GCS**: Streams the dump output to a Google Cloud Storage.
+* **Google GCS**: Streams the dump output to a Google Cloud Storage. Checkout the [sample script](https://github.com/nxtep-io/heroback/blob/master/samples/pg_gcp_dump.ts).
 
     This exporter requires the ```@google/storage``` module and its environment variables.
 
