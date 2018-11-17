@@ -1,21 +1,23 @@
-import Heroback from ".";
+import Heroback from "../lib";
 
 export default class HerobackSample {
   public static async execute() {
     const heroback = new Heroback();
 
+    // Prepare a heroback dump instance
     const dump = await heroback.dump({
       gzip: false,
-      provider: 'postgres',
       exporter: 'file',
-      dbName: 'bitcapital_core',
+      provider: 'postgres',
+      uri: 'bitcapital_core',
     });
 
-    const result = await dump.export();
-    console.log('Dumped!', result);
+    // Dump to local file
+    await dump.export();
   }
 }
 
+// Execute the dump catching any exceptions that may be thrown
 HerobackSample.execute().catch(exception => {
   console.error(exception);
   process.exit(-1);

@@ -1,5 +1,6 @@
 import { ChildProcess, spawn } from 'child_process';
 import * as fs from 'fs';
+import * as path from 'path';
 
 export type InputStream = { on: Function, pipe: Function };
 
@@ -27,8 +28,9 @@ export default class StreamUtils {
   /**
    * Reads a stream into a string variable asynchronously.
    */
-  public static async write(stream: InputStream, options: { filepath: string }): Promise<void> {
-    const writeStream = fs.createWriteStream(options.filepath);
+  public static async write(stream: InputStream, options: { fileName: string, baseDir: string }): Promise<void> {
+    const file = path.resolve(options.baseDir || './', options.fileName)
+    const writeStream = fs.createWriteStream(file);
     stream.pipe(writeStream);
     return new Promise<void>((resolve, reject) => {
       writeStream.on('error', error => reject(error));

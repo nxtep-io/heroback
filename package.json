@@ -4,8 +4,9 @@
   "description": "A database agnostic backup tool",
   "author": "Luis Brito <luis@nxtep.io>",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "typings": "./dist/types/index.d.ts",
+  "bin": "./dist/bin/heroback.js",
+  "main": "./dist/lib/index.js",
+  "typings": "./dist/types/lib/index.d.ts",
   "files": [
     "dist"
   ],
@@ -35,8 +36,13 @@
     ]
   },
   "dependencies": {
+    "@types/commander": "^2.12.2",
     "@types/node": "^10.12.8",
-    "ts-framework-common": "nxtep-io/ts-framework-common#v2"
+    "@types/urijs": "^1.15.38",
+    "commander": "^2.19.0",
+    "pjson": "^1.0.9",
+    "ts-framework-common": "nxtep-io/ts-framework-common#v2",
+    "urijs": "^1.19.1"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",

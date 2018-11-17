@@ -1,5 +1,6 @@
 
 import { ChildProcess } from 'child_process';
+import * as path from 'path';
 import { exporterFactory, ExportOptions, HerobackExporter } from './exporters';
 import { HerobackProvider, providerFactory } from './providers';
 import * as Utils from './utils';
@@ -10,19 +11,20 @@ export const CLEAN_REGEX_SUBSTITUTION = '$1$2$3.$4$5$6.$7000000';
 export interface HerobackDumpOptions {
   provider: string | HerobackProvider;
   exporter: string | HerobackExporter;
-  dbName: string;
+  baseDir?: string;
   gzip?: boolean;
+  uri: string;
 }
 
 export default class HerobackDump {
-  protected readonly dbName: string;
+  protected readonly uri: Utils.UriParamsSchema;
   protected readonly timestamp: Date;
   protected readonly provider: HerobackProvider;
   protected readonly exporter: HerobackExporter;
 
   constructor(public readonly options: HerobackDumpOptions) {
-    this.dbName = options.dbName;
     this.timestamp = new Date();
+    this.uri = Utils.Uri.parse(options.uri);
     this.provider = HerobackDump.initializeProvider(options);
     this.exporter = HerobackDump.initializeExporter(options);
   }
@@ -76,7 +78,7 @@ export default class HerobackDump {
    * For a higher level interface, check ```dump.export()``` and ```dump.raw()```.
    */
   async run(): Promise<ChildProcess> {
-    const dump = await this.provider.dump({ dbName: this.dbName });
+    const dump = await this.provider.dump({ uri: this.uri });
 
     // Optionally, compress with GZIP
     if (this.options.gzip) {

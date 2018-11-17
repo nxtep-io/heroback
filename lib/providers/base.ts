@@ -1,8 +1,9 @@
 import { ChildProcess } from "child_process";
 import HerobackDump from "../dump";
+import * as Utils from '../utils';
 
 export interface DumpOptions {
-  dbName: string;
+  uri: Utils.UriParamsSchema;
   gzip?: boolean;
 }
 
