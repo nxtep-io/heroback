@@ -31,12 +31,14 @@ Heroback will try to understand the supplied connection URI to use one of the av
 heroback dump postgresql://localhost/test
 ```
 
-* **PostgreSQL**:
+* **MongoDB**:
 
 ```bash
 heroback dump mongo://localhost/test
 ```
 
+
+Coming soon: MySQL, MariaDB and Elasticsearch.
 
 ## License
 
