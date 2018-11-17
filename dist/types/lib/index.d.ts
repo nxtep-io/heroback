@@ -1,11 +1,5 @@
-import { Logger } from 'ts-framework-common';
-import HerobackDump, { HerobackDumpOptions } from './dump';
-export interface HerobackOptions {
-    logger?: Logger;
-}
-export default class Heroback {
-    options: HerobackOptions;
-    readonly logger: Logger;
-    constructor(options?: HerobackOptions);
-    dump(options: HerobackDumpOptions): Promise<HerobackDump>;
-}
+export { default as default, HerobackOptions } from './heroback';
+export * from './base';
+export * from './providers';
+export * from './exporters';
+export * from './utils';

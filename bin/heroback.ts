@@ -10,7 +10,7 @@ export default class HerobackBin {
   public static init() {
     // Prepare dump command
     this.program
-      .command('dump <uri>')
+      .command('dump <uri>', 'Dumps a database based on its URI')
       .option('-d, --dest [path]', 'The destination directory for the dump [Defaults to cwd]')
       .option('-p, --provider [provider]', 'Uses specific database provider [Defaults to postgres]')
       .option('-e, --exporter [exporter]', 'Uses specific dump exporter [Defaults to file]')
