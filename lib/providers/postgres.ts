@@ -1,31 +1,40 @@
 import { ChildProcess, spawn } from 'child_process';
-import { WriteStream } from 'fs';
+import { DumpOptions, HerobackProvider } from '../base';
 import HerobackDump from "../dump";
-import HerobackProvider, { DumpOptions } from "./base";
-import { Writable } from 'stream';
+import { UriParamsSchema } from '../utils';
 
 
 export default class PostgresProvider extends HerobackProvider {
+  ext = '.sql';
+
+  public uriDefaults(): Partial<UriParamsSchema> {
+    return {
+      protocol: 'postgresql',
+      host: 'localhost',
+      port: '5432',
+    }
+  };
+
   /**
    * Dumps the desired database using pg_dump child process.
    */
-  public async dump(options: DumpOptions): Promise<ChildProcess> {
+  public async dump(options: DumpOptions = {}): Promise<ChildProcess> {
     const args = [
-      `--host=${options.uri.host}`,
-      `--port=${options.uri.port}`,
-      `--dbname=${options.uri.database}`,
+      `--host=${this.uri.host}`,
+      `--port=${this.uri.port}`,
+      `--dbname=${this.uri.database}`,
     ];
 
-    if (options.uri.username) {
-      args.push(`--username=${options.uri.username}`);
+    if (this.uri.username) {
+      args.push(`--username=${this.uri.username}`);
     }
 
     let child;
 
-    if (options.uri.password) {
+    if (this.uri.password) {
       args.push(`--password`);
       child = spawn('bash');
-      child.stdin.end(`$(echo ${options.uri.password + '\n'} | pg_dump ${args.join(' ')})`);
+      child.stdin.end(`$(echo ${this.uri.password + '\n'} | pg_dump ${args.join(' ')})`);
     } else {
       child = spawn('pg_dump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
     }

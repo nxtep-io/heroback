@@ -1,8 +1,7 @@
 /// <reference types="node" />
 import { ChildProcess } from 'child_process';
-import { ExportOptions, HerobackExporter } from './exporters';
-import { HerobackProvider } from './providers';
-import * as Utils from './utils';
+import { HerobackProvider } from './base';
+import HerobackExporter, { ExportOptions } from './base/exporter';
 export declare const CLEAN_REGEX: RegExp;
 export declare const CLEAN_REGEX_SUBSTITUTION = "$1$2$3.$4$5$6.$7000000";
 export interface HerobackDumpOptions {
@@ -14,7 +13,6 @@ export interface HerobackDumpOptions {
 }
 export default class HerobackDump {
     readonly options: HerobackDumpOptions;
-    protected readonly uri: Utils.UriParamsSchema;
     protected readonly timestamp: Date;
     protected readonly provider: HerobackProvider;
     protected readonly exporter: HerobackExporter;

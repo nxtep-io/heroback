@@ -4,8 +4,8 @@ export interface UriParamsSchema {
     database: string;
     username: string;
     password: string;
+    protocol: string;
 }
-export declare const UriDefaults: Partial<UriParamsSchema>;
 export default class UriUtils {
     static parse(input: string, defaults?: Partial<UriParamsSchema>): UriParamsSchema;
 }

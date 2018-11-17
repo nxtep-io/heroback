@@ -5,6 +5,26 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "dump (ts-node/mongo)",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+      ],
+      "args": [
+        "${workspaceFolder}/bin/heroback.ts",
+        "dump",
+        "mongo://localhost/admin"
+      ],
+      "env": {},
+      "sourceMaps": true,
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "console": "integratedTerminal"
+    },
+    {
       "name": "Debug Jest Tests",
       "type": "node",
       "request": "launch",

@@ -15,6 +15,7 @@
     "url": "https://github.com/nxtep-io/heroback.git"
   },
   "scripts": {
+    "dump": "node --require ts-node/register bin/heroback dump",
     "build": "yarn run -s clean && tsc",
     "clean": "rimraf ./dist",
     "test": "jest --config jest.json",

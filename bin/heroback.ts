@@ -11,7 +11,7 @@ export default class HerobackBin {
     // Prepare dump command
     this.program
       .command('dump <uri>')
-      .option('-b, --base-dir [baseDir]', 'The destination directory for the dump [Defaults to cwd]')
+      .option('-d, --dest [path]', 'The destination directory for the dump [Defaults to cwd]')
       .option('-p, --provider [provider]', 'Uses specific database provider [Defaults to postgres]')
       .option('-e, --exporter [exporter]', 'Uses specific dump exporter [Defaults to file]')
       .option('-z, --no-gzip', 'Disables GZIP compression of the dump file')
@@ -24,17 +24,24 @@ export default class HerobackBin {
     const heroback = new Heroback();
 
     // Prepare a heroback dump instance
-    const dump = await heroback.dump({
-      uri,
-      gzip: !cmd.gzip,
-      baseDir: process.cwd(),
-      exporter: cmd.exporter || 'file',
-      provider: cmd.provider || 'postgres',
-    });
+    try {
+      const dump = await heroback.dump({
+        uri,
+        gzip: false,
+        baseDir: cmd.path || process.cwd(),
+        exporter: cmd.exporter || 'file',
+        provider: cmd.provider || 'postgres',
+      });
 
-    // Dump to local file
-    await dump.export();
-    console.log('Dumped database to local file!');
+      // Dump to local file
+      await dump.export();
+
+      heroback.logger.info('Success!');
+      process.exit(0);
+    } catch (exception) {
+      heroback.logger.error(exception.message);
+      process.exit(-1);
+    }
   }
 }
 

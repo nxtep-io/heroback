@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { ChildProcess } from 'child_process';
-import { HerobackExporter, ExportOptions } from "../exporters";
+import { ExportOptions, HerobackExporter } from '../base';
 export interface AmazonS3ExporterOptions extends ExportOptions {
     bucketName: string;
 }

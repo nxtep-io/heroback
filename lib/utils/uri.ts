@@ -6,12 +6,8 @@ export interface UriParamsSchema {
   database: string,
   username: string,
   password: string,
+  protocol: string,
 };
-
-export const UriDefaults: Partial<UriParamsSchema> = ({
-  host: 'localhost',
-  port: '5432',
-});
 
 export default class UriUtils {
 
@@ -21,27 +17,14 @@ export default class UriUtils {
     }
 
     const uri = new URI(input);
-    const defs = { ...UriDefaults, ...defaults };
-
     const results = {
-      host: uri.host() || defs.host,
-      port: uri.port() || defs.port,
+      host: uri.host() || defaults.host,
+      port: uri.port() || defaults.port,
+      protocol: uri.protocol() || defaults.protocol,
+      username: uri.username() || defaults.username,
+      password: uri.password() || defaults.password,
       database: uri.path().replace('/', ''),
-      username: uri.username(),
-      password: uri.password(),
     };
-
-    if(!results.host || !results.host.length) {
-      throw new Error('Invalid database URL, host is not defined');
-    }
-
-    if(!results.port || !results.port.length) {
-      throw new Error('Invalid database URL, port is not defined');
-    }
-
-    if(!results.database || !results.database.length) {
-      throw new Error('Invalid database URL, database name is not defined');
-    }
 
     return results;
   }

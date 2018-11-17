@@ -1,8 +1,7 @@
 
 import { ChildProcess } from 'child_process';
-import * as path from 'path';
-import { exporterFactory, ExportOptions, HerobackExporter } from './exporters';
-import { HerobackProvider, providerFactory } from './providers';
+import { exporterFactory, HerobackProvider, providerFactory } from './base';
+import HerobackExporter, { ExportOptions } from './base/exporter';
 import * as Utils from './utils';
 
 export const CLEAN_REGEX = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}).(\d{3})Z$/;
@@ -17,14 +16,12 @@ export interface HerobackDumpOptions {
 }
 
 export default class HerobackDump {
-  protected readonly uri: Utils.UriParamsSchema;
   protected readonly timestamp: Date;
   protected readonly provider: HerobackProvider;
   protected readonly exporter: HerobackExporter;
 
   constructor(public readonly options: HerobackDumpOptions) {
     this.timestamp = new Date();
-    this.uri = Utils.Uri.parse(options.uri);
     this.provider = HerobackDump.initializeProvider(options);
     this.exporter = HerobackDump.initializeExporter(options);
   }
@@ -35,10 +32,10 @@ export default class HerobackDump {
   private static initializeProvider(options: HerobackDumpOptions): HerobackProvider {
     let provider;
 
-    if (typeof options.provider === typeof 'str') {
-      provider = providerFactory(options.provider as string);
+    if (options.provider instanceof HerobackProvider) {
+      provider = options.provider;
     } else {
-      provider = options.provider as HerobackProvider;
+      provider = providerFactory(options);
     }
 
     return provider;
@@ -65,9 +62,9 @@ export default class HerobackDump {
   get fileName(): string {
     const clean = this.timestamp.toISOString().replace(CLEAN_REGEX, CLEAN_REGEX_SUBSTITUTION);
     if (this.options.gzip) {
-      return `${clean}.sql.gz`;
+      return `${clean}${this.provider.ext}.gz`;
     }
-    return `${clean}.sql`;
+    return `${clean}.dump${this.provider.ext}`;
   }
 
   /**
@@ -78,7 +75,7 @@ export default class HerobackDump {
    * For a higher level interface, check ```dump.export()``` and ```dump.raw()```.
    */
   async run(): Promise<ChildProcess> {
-    const dump = await this.provider.dump({ uri: this.uri });
+    const dump = await this.provider.dump();
 
     // Optionally, compress with GZIP
     if (this.options.gzip) {
