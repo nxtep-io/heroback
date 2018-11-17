@@ -37,6 +37,21 @@ heroback dump postgresql://localhost/test
 heroback dump mongo://localhost/test
 ```
 
+## Available exporters
+
+Heroback will try to understand the supplied connection URI to use one of the available providers in the library and dump its content to a file.
+
+* **File** (Default): Streams the dump output to a local file.
+
+* **Amazon S3**: Streams the dump output to a S3 bucket in AWS.
+
+* **Google GCS**: Streams the dump output to a Google Cloud Storage.
+
+
+## Examples
+
+Check the [samples/](https://github.com/nxtep-io/heroback/tree/master/samples) directory in the repository.
+
 
 Coming soon: MySQL, MariaDB and Elasticsearch.
 
