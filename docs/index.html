@@ -80,15 +80,23 @@ heroback dump <span class="hljs-string">"&lt;url&gt;"</span></code></pre>
 				<ul>
 					<li><strong>PostgreSQL</strong>:</li>
 				</ul>
-				<pre><code class="language-bash">heroback dump postgresql://localhost/<span class="hljs-built_in">test</span></code></pre>
+				<pre><code class="language-bash"><span class="hljs-comment"># Dumps to local file</span>
+heroback dump postgresql://localhost/<span class="hljs-built_in">test</span>
+
+<span class="hljs-comment"># Restores from local file</span>
+heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.sql"</span> <span class="hljs-string">"postgresql://localhost/test"</span>;</code></pre>
 				<ul>
 					<li><strong>MongoDB</strong>:</li>
 				</ul>
-				<pre><code class="language-bash">heroback dump mongo://localhost/<span class="hljs-built_in">test</span></code></pre>
-				<h2 id="available-exporters">Available exporters</h2>
+				<pre><code class="language-bash"><span class="hljs-comment"># Dumps to local file</span>
+heroback dump mongo://localhost/<span class="hljs-built_in">test</span>
+
+<span class="hljs-comment"># Restores from local file</span>
+heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archive"</span> <span class="hljs-string">"mongo://localhost/test"</span>;</code></pre>
+				<h2 id="available-importers-exporters">Available importers / exporters</h2>
 				<p>Heroback will try to understand the supplied connection URI to use one of the available providers in the library and dump its content to a file.</p>
 				<ul>
-					<li><p><strong>File</strong> (Default): Streams the dump output to a local file.</p>
+					<li><p><strong>File</strong> (Default): Streams the dump to/from a local file.</p>
 					</li>
 					<li><p><strong>Amazon S3</strong>: Streams the dump output to a S3 bucket in AWS. Checkout the <a href="https://github.com/nxtep-io/heroback/blob/master/samples/pg_aws_dump.ts">sample script</a>.</p>
 						<p>  This exporter requires the <code>aws-sdk</code> module and its environment variables.</p>
