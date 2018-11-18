@@ -45,6 +45,29 @@ export default class MongoProvider extends HerobackProvider {
   }
 
   public async restore(dump: InputStream, options: RestoreOptions): Promise<ChildProcess> {
-    return null;
+    const args = [
+      '--archive',
+      `-d`,
+      this.uri.database,
+    ];
+
+    if (this.uri.host !== this.uriDefaults().host) {
+      args.push(`--host="${this.uri.host}"`);
+    }
+
+    if (this.uri.port !== this.uriDefaults().port) {
+      args.push(`--port="${this.uri.port}"`, );
+    }
+
+    if (this.uri.username) {
+      args.push('-u', this.uri.username);
+    }
+
+    if (this.uri.password) {
+      args.push('-p', this.uri.password);
+    }
+
+    this.logger.debug('Restoring using "mongorestore" binary', { args });
+    return spawn('mongorestore', args, { stdio: ['ignore', 'pipe', 'inherit'] });
   }
 }

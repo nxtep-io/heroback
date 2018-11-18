@@ -66,12 +66,13 @@ export default class PostgresProvider extends HerobackProvider {
       if (this.uri.password) {
         child = spawn(`PGPASSWORD="${this.uri.password}" psql`, args, {
           shell: true,
-          stdio: ['ignore', 'pipe', 'inherit']
+          stdio: ['pipe', 'pipe', 'inherit']
         });
       } else {
         child = spawn('psql', args, { stdio: ['ignore', 'pipe', 'inherit'] });
       }
 
+      dump.pipe(child.stdin);
       resolve(child);
     }));
   }
