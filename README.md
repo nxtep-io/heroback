@@ -20,6 +20,7 @@ Then, just call it from the command line.
 # Minimal configuration takes only the database connection URL
 heroback dump "<url>"
 ```
+<br />
 
 ## Available providers
 
@@ -34,6 +35,7 @@ heroback dump postgresql://localhost/test
 # Restores from local file
 heroback restore "20181118.052834.298000000.dump.sql" "postgresql://localhost/test";
 ```
+<br />
 
 * **MongoDB**:
 
@@ -44,6 +46,7 @@ heroback dump mongo://localhost/test
 # Restores from local file
 heroback restore "20181118.052834.298000000.dump.archive" "mongo://localhost/test";
 ```
+<br />
 
 ## Available importers / exporters
 
@@ -63,12 +66,33 @@ Heroback will try to understand the supplied connection URI to use one of the av
 
     Remember to add it using NPM or Yarn: ```yarn global add @google/storage```
 
-## Examples
-
-Check the [samples/](https://github.com/nxtep-io/heroback/tree/master/samples) directory in the repository.
-
-
+<br />
 Coming soon: MySQL, MariaDB and Elasticsearch.
+<br />
+
+## Programmatic Usage
+
+You can use Heroback under the hood in your NodeJS / Typescript projects.
+
+```typescript
+import Heroback from 'heroback';
+
+// Prepare a new heroback instance
+const heroback = new Heroback({ gzip: true });
+
+// Prepares to dump database to a local file
+const dump = await heroback.dump({
+  exporter: 'file',
+  uri: 'postgres://locahost/test',
+});
+
+// Start the streaming to the local file
+await dump.export();
+console.log('Exported successfully!');
+```
+<br />
+Check the [samples/](https://github.com/nxtep-io/heroback/tree/master/samples) directory in the repository.
+<br />
 
 ## License
 
