@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import { ChildProcess } from 'child_process';
+import { Logger } from 'ts-framework-common';
 import { ExportOptions, HerobackExporter, HerobackProvider } from './base';
 export declare const CLEAN_REGEX: RegExp;
 export declare const CLEAN_REGEX_SUBSTITUTION = "$1$2$3.$4$5$6.$7000000";
@@ -7,11 +8,13 @@ export interface HerobackDumpOptions {
     provider: string | HerobackProvider;
     exporter: string | HerobackExporter;
     baseDir?: string;
+    logger?: Logger;
     gzip?: boolean;
     uri: string;
 }
 export default class HerobackDump {
     readonly options: HerobackDumpOptions;
+    protected readonly logger: Logger;
     protected readonly timestamp: Date;
     protected readonly provider: HerobackProvider;
     protected readonly exporter: HerobackExporter;

@@ -22,5 +22,5 @@ export default abstract class HerobackProvider {
     };
     abstract uriDefaults(): Partial<Utils.UriParamsSchema>;
     abstract dump(options?: DumpOptions): Promise<ChildProcess>;
-    abstract restore(dump: Utils.InputStream, options: RestoreOptions): Promise<boolean>;
+    abstract restore(dump: Utils.InputStream, options: RestoreOptions): Promise<ChildProcess>;
 }

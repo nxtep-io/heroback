@@ -28,20 +28,28 @@ Heroback will try to understand the supplied connection URI to use one of the av
 * **PostgreSQL**:
 
 ```bash
+# Dumps to local file
 heroback dump postgresql://localhost/test
+
+# Restores from local file
+heroback restore "20181118.052834.298000000.dump.sql" "postgresql://localhost/test";
 ```
 
 * **MongoDB**:
 
 ```bash
+# Dumps to local file
 heroback dump mongo://localhost/test
+
+# Restores from local file
+heroback restore "20181118.052834.298000000.dump.archive" "mongo://localhost/test";
 ```
 
-## Available exporters
+## Available importers / exporters
 
 Heroback will try to understand the supplied connection URI to use one of the available providers in the library and dump its content to a file.
 
-* **File** (Default): Streams the dump output to a local file.
+* **File** (Default): Streams the dump to/from a local file.
 
 * **Amazon S3**: Streams the dump output to a S3 bucket in AWS. Checkout the [sample script](https://github.com/nxtep-io/heroback/blob/master/samples/pg_aws_dump.ts).
 

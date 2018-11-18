@@ -9,5 +9,5 @@ export default class MongoProvider extends HerobackProvider {
      * Dumps the desired database using mongodump child process.
      */
     dump(options?: DumpOptions): Promise<ChildProcess>;
-    restore(dump: InputStream, options: RestoreOptions): Promise<boolean>;
+    restore(dump: InputStream, options: RestoreOptions): Promise<ChildProcess>;
 }
