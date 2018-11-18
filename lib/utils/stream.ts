@@ -35,7 +35,8 @@ export default class StreamUtils {
     stream.pipe(writeStream);
     return new Promise<void>((resolve, reject) => {
       writeStream.on('error', error => reject(error));
-      writeStream.on('end', () => resolve());
+      stream.on('error', error => reject(error));
+      stream.on('end', () => resolve());
     });
   }
 

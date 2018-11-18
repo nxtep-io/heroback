@@ -40,10 +40,11 @@ export default class MongoProvider extends HerobackProvider {
       args.push('-p', this.uri.password);
     }
 
+    this.logger.debug('Dumping using "mongodump" binary', { args });
     return spawn('mongodump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
   }
 
-  public async restore(dump: InputStream, options: RestoreOptions): Promise<boolean> {
-    return false;
+  public async restore(dump: InputStream, options: RestoreOptions): Promise<ChildProcess> {
+    return null;
   }
 }

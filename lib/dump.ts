@@ -1,5 +1,6 @@
 
 import { ChildProcess } from 'child_process';
+import { Logger } from 'ts-framework-common';
 import { exporterFactory, ExportOptions, HerobackExporter, HerobackProvider, providerFactory } from './base';
 import * as Providers from './providers';
 import * as Utils from './utils';
@@ -11,17 +12,20 @@ export interface HerobackDumpOptions {
   provider: string | HerobackProvider;
   exporter: string | HerobackExporter;
   baseDir?: string;
+  logger?: Logger;
   gzip?: boolean;
   uri: string;
 }
 
 export default class HerobackDump {
+  protected readonly logger: Logger;
   protected readonly timestamp: Date;
   protected readonly provider: HerobackProvider;
   protected readonly exporter: HerobackExporter;
 
   constructor(public readonly options: HerobackDumpOptions) {
     this.timestamp = new Date();
+    this.logger = options.logger || Logger.getInstance();
     this.provider = HerobackDump.initializeProvider(options);
     this.exporter = HerobackDump.initializeExporter(options);
   }

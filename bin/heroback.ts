@@ -60,7 +60,7 @@ export default class HerobackBin {
 
       // Restore from local dump
       const dump = await Stream.read({ fileName: file });
-      await restore.run(dump);
+      await restore.import(dump);
 
       this.heroback.logger.info('Success!');
       process.exit(0);

@@ -30,10 +30,13 @@ export default class PostgresProvider extends HerobackProvider {
 
     let child;
 
+    this.logger.debug('Dumping using "pg_dump" binary', { args });
+
     if (this.uri.password) {
-      args.push(`--password`);
-      child = spawn('bash');
-      child.stdin.end(`$(echo ${this.uri.password + '\n'} | pg_dump ${args.join(' ')})`);
+      child = spawn(`PGPASSWORD="${this.uri.password}" pg_dump`, args, {
+        shell: true,
+        stdio: ['ignore', 'pipe', 'inherit']
+      });
     } else {
       child = spawn('pg_dump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
     }
@@ -41,21 +44,35 @@ export default class PostgresProvider extends HerobackProvider {
     return child;
   }
 
-  public async restore(dump: Utils.InputStream, options: RestoreOptions): Promise<boolean> {
-    return new Promise<boolean>(async (resolve, reject) => dump.on('open', async () => {
+  /**
+   * Restores the dump to the desired database using apsql child process.
+   */
+  public async restore(dump: Utils.InputStream, options: RestoreOptions): Promise<ChildProcess> {
+    return new Promise<ChildProcess>(async (resolve, reject) => dump.on('open', async () => {
       const args = [
         `${this.uri.database}`,
         `--host=${this.uri.host}`,
         `--port=${this.uri.port}`,
       ];
-  
+
       if (this.uri.username) {
         args.push(`--username=${this.uri.username}`);
       }
 
-      const child = spawn('psql', args, { stdio: ['pipe', 'pipe', 'inherit'] });
-      dump.pipe(child.stdin);
-      child.on('exit', () => resolve(true));
+      let child;
+
+      this.logger.debug('Restoring using "psql" binary', { args });
+
+      if (this.uri.password) {
+        child = spawn(`PGPASSWORD="${this.uri.password}" psql`, args, {
+          shell: true,
+          stdio: ['ignore', 'pipe', 'inherit']
+        });
+      } else {
+        child = spawn('psql', args, { stdio: ['ignore', 'pipe', 'inherit'] });
+      }
+
+      resolve(child);
     }));
   }
 }
