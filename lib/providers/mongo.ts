@@ -1,6 +1,6 @@
 import { ChildProcess, spawn } from 'child_process';
 import { DumpOptions, HerobackProvider, RestoreOptions } from '../base';
-import { UriParamsSchema, InputStream } from '../utils';
+import { InputStream, UriParamsSchema } from '../utils';
 
 
 export default class MongoProvider extends HerobackProvider {
@@ -68,6 +68,8 @@ export default class MongoProvider extends HerobackProvider {
     }
 
     this.logger.debug('Restoring using "mongorestore" binary', { args });
-    return spawn('mongorestore', args, { stdio: ['ignore', 'pipe', 'inherit'] });
+    const child = spawn('mongorestore', args, { stdio: ['pipe', 'pipe', 'inherit'] });
+    dump.pipe(child.stdin);
+    return child;
   }
 }

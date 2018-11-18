@@ -34,10 +34,14 @@ export default class HerobackRestore {
   }
 
   public async import(dump: InputStream, options: RestoreOptions = {}): Promise<boolean> {
-    const result = await this.provider.restore(dump, options);
-    return new Promise<boolean>((resolve, reject) => {
+    // Wait for dump stream to be opened before starting
+    return new Promise<boolean>((resolve, reject) => dump.on('open', async () => {
+      // Restores dump stream using provider
+      const result = await this.provider.restore(dump, options);
+
+      // Handle restore events for callback
       result.on('error', exception => reject(exception));
-      result.on('exit', () => resolve(true));
-    });
+      result.on('exit', (code) => resolve(true));
+    }));
   }
 }
