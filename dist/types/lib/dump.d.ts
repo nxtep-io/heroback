@@ -2,6 +2,7 @@
 import { ChildProcess } from 'child_process';
 import { Logger } from 'ts-framework-common';
 import { ExportOptions, HerobackExporter, HerobackProvider } from './base';
+import * as Utils from './utils';
 export declare const CLEAN_REGEX: RegExp;
 export declare const CLEAN_REGEX_SUBSTITUTION = "$1$2$3.$4$5$6.$7000000";
 export interface HerobackDumpOptions {
@@ -47,5 +48,5 @@ export default class HerobackDump {
     /**
      * Dumps and exports the results.
      */
-    export(options?: ExportOptions): Promise<boolean>;
+    export(options?: ExportOptions): Promise<Utils.InputStream>;
 }

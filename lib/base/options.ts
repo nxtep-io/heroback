@@ -7,9 +7,3 @@ export interface ExportOptions {
   fileName?: string;
   baseDir?: string;
 }
-
-export interface DumpOptions {
-}
-
-export interface RestoreOptions {
-}

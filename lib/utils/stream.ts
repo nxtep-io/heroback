@@ -29,14 +29,14 @@ export default class StreamUtils {
   /**
    * Writes a stream to a file.
    */
-  public static async write(stream: InputStream, options: { fileName: string, baseDir: string }): Promise<void> {
+  public static async write(stream: InputStream, options: { fileName: string, baseDir: string }): Promise<InputStream> {
     const file = path.resolve(options.baseDir || './', options.fileName)
     const writeStream = fs.createWriteStream(file);
     stream.pipe(writeStream);
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<InputStream>((resolve, reject) => {
       writeStream.on('error', error => reject(error));
       stream.on('error', error => reject(error));
-      stream.on('end', () => resolve());
+      stream.on('end', () => resolve(writeStream));
     });
   }
 

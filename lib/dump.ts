@@ -102,7 +102,7 @@ export default class HerobackDump {
   /**
    * Dumps and exports the results.
    */
-  async export(options: ExportOptions = {}): Promise<boolean> {
+  async export(options: ExportOptions = {}): Promise<Utils.InputStream> {
     const dump = await this.run();
     return this.exporter.export(dump, { fileName: this.fileName, ...options });
   }

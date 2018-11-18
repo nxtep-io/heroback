@@ -1,7 +1,7 @@
 heroback
 ========
 
-An agnostic database backup tool.
+An agnostic database backup tool fully implemented using Streams.
 
 
 ## Getting started

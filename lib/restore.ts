@@ -1,6 +1,7 @@
 
+import { ChildProcess } from 'child_process';
 import { Logger } from 'ts-framework-common';
-import { HerobackProvider, providerFactory, RestoreOptions } from './base';
+import { HerobackProvider, providerFactory } from './base';
 import * as Providers from './providers';
 import { InputStream } from './utils';
 
@@ -33,15 +34,15 @@ export default class HerobackRestore {
     return provider;
   }
 
-  public async import(dump: InputStream, options: RestoreOptions = {}): Promise<boolean> {
+  public async import(dump: InputStream): Promise<ChildProcess> {
     // Wait for dump stream to be opened before starting
-    return new Promise<boolean>((resolve, reject) => dump.on('open', async () => {
+    return new Promise<ChildProcess>((resolve, reject) => dump.on('open', async () => {
       // Restores dump stream using provider
-      const result = await this.provider.restore(dump, options);
+      const result = await this.provider.restore(dump);
 
       // Handle restore events for callback
       result.on('error', exception => reject(exception));
-      result.on('exit', (code) => resolve(true));
+      result.on('exit', () => resolve(result));
     }));
   }
 }

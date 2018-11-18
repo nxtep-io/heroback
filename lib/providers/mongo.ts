@@ -1,5 +1,5 @@
 import { ChildProcess, spawn } from 'child_process';
-import { DumpOptions, HerobackProvider, RestoreOptions } from '../base';
+import { HerobackProvider } from '../base';
 import { InputStream, UriParamsSchema } from '../utils';
 
 
@@ -17,7 +17,7 @@ export default class MongoProvider extends HerobackProvider {
   /**
    * Dumps the desired database using mongodump child process.
    */
-  public async dump(options: DumpOptions = {}): Promise<ChildProcess> {
+  public async dump(): Promise<ChildProcess> {
     const args = [
       '--archive',
       `-d`,
@@ -44,7 +44,7 @@ export default class MongoProvider extends HerobackProvider {
     return spawn('mongodump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
   }
 
-  public async restore(dump: InputStream, options: RestoreOptions): Promise<ChildProcess> {
+  public async restore(dump: InputStream): Promise<ChildProcess> {
     const args = [
       '--archive',
       `-d`,

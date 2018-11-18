@@ -14,7 +14,7 @@ export default class StreamUtils {
     static write(stream: InputStream, options: {
         fileName: string;
         baseDir: string;
-    }): Promise<void>;
+    }): Promise<InputStream>;
     /**
      * Reads a file into a stream.
      */

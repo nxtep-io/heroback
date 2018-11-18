@@ -65,7 +65,7 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="heroback">heroback</h1>
-				<p>An agnostic database backup tool.</p>
+				<p>An agnostic database backup tool fully implemented using Streams.</p>
 				<h2 id="getting-started">Getting started</h2>
 				<pre><code class="language-bash"><span class="hljs-comment"># Add to your dependencies using yarn</span>
 yarn global add <span class="hljs-string">"nxtep-io/heroback#master"</span>;
@@ -75,6 +75,7 @@ npm install --global <span class="hljs-string">"github:nxtep-io/heroback#master"
 				<p>Then, just call it from the command line.</p>
 				<pre><code class="language-bash"><span class="hljs-comment"># Minimal configuration takes only the database connection URL</span>
 heroback dump <span class="hljs-string">"&lt;url&gt;"</span></code></pre>
+				<br />
 				<h2 id="available-providers">Available providers</h2>
 				<p>Heroback will try to understand the supplied connection URI to use one of the available providers in the library and dump its content to a file.</p>
 				<ul>
@@ -85,6 +86,7 @@ heroback dump postgresql://localhost/<span class="hljs-built_in">test</span>
 
 <span class="hljs-comment"># Restores from local file</span>
 heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.sql"</span> <span class="hljs-string">"postgresql://localhost/test"</span>;</code></pre>
+				<br />
 				<ul>
 					<li><strong>MongoDB</strong>:</li>
 				</ul>
@@ -93,6 +95,7 @@ heroback dump mongo://localhost/<span class="hljs-built_in">test</span>
 
 <span class="hljs-comment"># Restores from local file</span>
 heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archive"</span> <span class="hljs-string">"mongo://localhost/test"</span>;</code></pre>
+				<br />
 				<h2 id="available-importers-exporters">Available importers / exporters</h2>
 				<p>Heroback will try to understand the supplied connection URI to use one of the available providers in the library and dump its content to a file.</p>
 				<ul>
@@ -107,9 +110,28 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 						<p>  Remember to add it using NPM or Yarn: <code>yarn global add @google/storage</code></p>
 					</li>
 				</ul>
-				<h2 id="examples">Examples</h2>
-				<p>Check the <a href="https://github.com/nxtep-io/heroback/tree/master/samples">samples/</a> directory in the repository.</p>
-				<p>Coming soon: MySQL, MariaDB and Elasticsearch.</p>
+				<br />
+				Coming soon: MySQL, MariaDB and Elasticsearch.
+				<br />
+				<h2 id="programmatic-usage">Programmatic Usage</h2>
+				<p>You can use Heroback under the hood in your NodeJS / Typescript projects.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> Heroback <span class="hljs-keyword">from</span> <span class="hljs-string">'heroback'</span>;
+
+<span class="hljs-comment">// Prepare a new heroback instance</span>
+<span class="hljs-keyword">const</span> heroback = <span class="hljs-keyword">new</span> Heroback({ gzip: <span class="hljs-literal">true</span> });
+
+<span class="hljs-comment">// Prepares to dump database to a local file</span>
+<span class="hljs-keyword">const</span> dump = <span class="hljs-keyword">await</span> heroback.dump({
+  exporter: <span class="hljs-string">'file'</span>,
+  uri: <span class="hljs-string">'postgres://locahost/test'</span>,
+});
+
+<span class="hljs-comment">// Start the streaming to the local file</span>
+<span class="hljs-keyword">await</span> dump.export();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Exported successfully!'</span>);</code></pre>
+				<br />
+				Check the [samples/](https://github.com/nxtep-io/heroback/tree/master/samples) directory in the repository.
+				<br />
 				<h2 id="license">License</h2>
 				<p>The project is licensed under the <a href="./LICENSE.md">MIT License</a>.</p>
 			</div>
@@ -164,9 +186,6 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 						<a href="classes/uriutils.html" class="tsd-kind-icon">Uri<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/dumpoptions.html" class="tsd-kind-icon">Dump<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/exportoptions.html" class="tsd-kind-icon">Export<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
@@ -183,9 +202,6 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/importoptions.html" class="tsd-kind-icon">Import<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/restoreoptions.html" class="tsd-kind-icon">Restore<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/uriparamsschema.html" class="tsd-kind-icon">Uri<wbr>Params<wbr>Schema</a>

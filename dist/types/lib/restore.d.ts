@@ -1,5 +1,7 @@
+/// <reference types="node" />
+import { ChildProcess } from 'child_process';
 import { Logger } from 'ts-framework-common';
-import { HerobackProvider, RestoreOptions } from './base';
+import { HerobackProvider } from './base';
 import { InputStream } from './utils';
 export interface HerobackRestoreOptions {
     provider: string | HerobackProvider;
@@ -14,5 +16,5 @@ export default class HerobackRestore {
     protected readonly provider: HerobackProvider;
     constructor(options: HerobackRestoreOptions);
     private static initializeProvider;
-    import(dump: InputStream, options?: RestoreOptions): Promise<boolean>;
+    import(dump: InputStream): Promise<ChildProcess>;
 }

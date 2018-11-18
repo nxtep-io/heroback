@@ -1,5 +1,5 @@
 import { ChildProcess, spawn } from 'child_process';
-import { DumpOptions, HerobackProvider, RestoreOptions } from '../base';
+import { HerobackProvider } from '../base';
 import * as Utils from '../utils';
 
 
@@ -17,7 +17,7 @@ export default class PostgresProvider extends HerobackProvider {
   /**
    * Dumps the desired database using pg_dump child process.
    */
-  public async dump(options: DumpOptions = {}): Promise<ChildProcess> {
+  public async dump(): Promise<ChildProcess> {
     const args = [
       `--host=${this.uri.host}`,
       `--port=${this.uri.port}`,
@@ -47,7 +47,7 @@ export default class PostgresProvider extends HerobackProvider {
   /**
    * Restores the dump to the desired database using apsql child process.
    */
-  public async restore(dump: Utils.InputStream, options: RestoreOptions): Promise<ChildProcess> {
+  public async restore(dump: Utils.InputStream): Promise<ChildProcess> {
     const args = [
       `${this.uri.database}`,
       `--host=${this.uri.host}`,

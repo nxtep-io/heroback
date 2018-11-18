@@ -2,7 +2,6 @@
 import { ChildProcess } from "child_process";
 import { Logger } from 'ts-framework-common';
 import * as Utils from '../utils';
-import { DumpOptions, RestoreOptions } from "./options";
 export interface HerobackProviderOptions {
     uri: Utils.UriParamsSchema;
     logger?: Logger;
@@ -21,6 +20,7 @@ export default abstract class HerobackProvider {
         protocol: string;
     };
     abstract uriDefaults(): Partial<Utils.UriParamsSchema>;
-    abstract dump(options?: DumpOptions): Promise<ChildProcess>;
-    abstract restore(dump: Utils.InputStream, options: RestoreOptions): Promise<ChildProcess>;
+    abstract dump(): Promise<ChildProcess>;
+    abstract restore(dump: Utils.InputStream): Promise<ChildProcess>;
+    migrate(): Promise<ChildProcess>;
 }

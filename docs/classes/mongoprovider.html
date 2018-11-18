@@ -107,6 +107,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mongoprovider.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="mongoprovider.html#migrate" class="tsd-kind-icon">migrate</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mongoprovider.html#restore" class="tsd-kind-icon">restore</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mongoprovider.html#uridefaults" class="tsd-kind-icon">uri<wbr>Defaults</a></li>
 							</ul>
@@ -127,7 +128,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/base/provider.ts#L13">base/provider.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/base/provider.ts#L12">base/provider.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -150,7 +151,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#ext">ext</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/providers/mongo.ts#L7">providers/mongo.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/providers/mongo.ts#L7">providers/mongo.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,7 +162,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#logger">logger</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/base/provider.ts#L12">base/provider.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/base/provider.ts#L11">base/provider.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -172,7 +173,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#options">options</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/base/provider.ts#L15">base/provider.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/base/provider.ts#L14">base/provider.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -190,7 +191,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#uri">uri</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/base/provider.ts#L26">base/provider.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/base/provider.ts#L25">base/provider.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -206,14 +207,14 @@
 					<a name="dump" class="tsd-anchor"></a>
 					<h3>dump</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/dumpoptions.html" class="tsd-signature-type">DumpOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/providers/mongo.ts#L20">providers/mongo.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/providers/mongo.ts#L20">providers/mongo.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -221,12 +222,24 @@
 									<p>Dumps the desired database using mongodump child process.</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/dumpoptions.html" class="tsd-signature-type">DumpOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="migrate" class="tsd-anchor"></a>
+					<h3>migrate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">migrate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#migrate">migrate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/base/provider.ts#L35">base/provider.ts:35</a></li>
+								</ul>
+							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -235,23 +248,20 @@
 					<a name="restore" class="tsd-anchor"></a>
 					<h3>restore</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/restoreoptions.html" class="tsd-signature-type">RestoreOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#restore">restore</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/providers/mongo.ts#L47">providers/mongo.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/providers/mongo.ts#L47">providers/mongo.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>dump: <a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a></h5>
-								</li>
-								<li>
-									<h5>options: <a href="../interfaces/restoreoptions.html" class="tsd-signature-type">RestoreOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -269,7 +279,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#uridefaults">uriDefaults</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/889fedd/lib/providers/mongo.ts#L9">providers/mongo.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/cd17d13/lib/providers/mongo.ts#L9">providers/mongo.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/uriparamsschema.html" class="tsd-signature-type">UriParamsSchema</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -335,6 +345,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
 								<a href="mongoprovider.html#dump" class="tsd-kind-icon">dump</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="mongoprovider.html#migrate" class="tsd-kind-icon">migrate</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
 								<a href="mongoprovider.html#restore" class="tsd-kind-icon">restore</a>
 							</li>
@@ -358,9 +371,6 @@
 						<a href="uriutils.html" class="tsd-kind-icon">Uri<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="../interfaces/dumpoptions.html" class="tsd-kind-icon">Dump<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="../interfaces/exportoptions.html" class="tsd-kind-icon">Export<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
@@ -377,9 +387,6 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="../interfaces/importoptions.html" class="tsd-kind-icon">Import<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="../interfaces/restoreoptions.html" class="tsd-kind-icon">Restore<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="../interfaces/uriparamsschema.html" class="tsd-kind-icon">Uri<wbr>Params<wbr>Schema</a>
