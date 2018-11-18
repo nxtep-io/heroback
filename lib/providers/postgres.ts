@@ -1,13 +1,12 @@
 import { ChildProcess, spawn } from 'child_process';
-import { DumpOptions, HerobackProvider } from '../base';
-import HerobackDump from "../dump";
-import { UriParamsSchema } from '../utils';
+import { DumpOptions, HerobackProvider, RestoreOptions } from '../base';
+import * as Utils from '../utils';
 
 
 export default class PostgresProvider extends HerobackProvider {
   ext = '.sql';
 
-  public uriDefaults(): Partial<UriParamsSchema> {
+  public uriDefaults(): Partial<Utils.UriParamsSchema> {
     return {
       protocol: 'postgresql',
       host: 'localhost',
@@ -42,7 +41,21 @@ export default class PostgresProvider extends HerobackProvider {
     return child;
   }
 
-  public async restore(dump: HerobackDump): Promise<boolean> {
-    return false;
+  public async restore(dump: Utils.InputStream, options: RestoreOptions): Promise<boolean> {
+    return new Promise<boolean>(async (resolve, reject) => dump.on('open', async () => {
+      const args = [
+        `${this.uri.database}`,
+        `--host=${this.uri.host}`,
+        `--port=${this.uri.port}`,
+      ];
+  
+      if (this.uri.username) {
+        args.push(`--username=${this.uri.username}`);
+      }
+
+      const child = spawn('psql', args, { stdio: ['pipe', 'pipe', 'inherit'] });
+      dump.pipe(child.stdin);
+      child.on('exit', () => resolve(true));
+    }));
   }
 }

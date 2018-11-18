@@ -1,7 +1,7 @@
 
 import { ChildProcess } from 'child_process';
-import { exporterFactory, HerobackProvider, providerFactory } from './base';
-import HerobackExporter, { ExportOptions } from './base/exporter';
+import { exporterFactory, ExportOptions, HerobackExporter, HerobackProvider, providerFactory } from './base';
+import * as Providers from './providers';
 import * as Utils from './utils';
 
 export const CLEAN_REGEX = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}).(\d{3})Z$/;
@@ -27,7 +27,7 @@ export default class HerobackDump {
   }
 
   /**
-   * Initializes an exporter instance based on constructor options.
+   * Initializes a provider instance based on constructor options.
    */
   private static initializeProvider(options: HerobackDumpOptions): HerobackProvider {
     let provider;
@@ -35,7 +35,7 @@ export default class HerobackDump {
     if (options.provider instanceof HerobackProvider) {
       provider = options.provider;
     } else {
-      provider = providerFactory(options);
+      provider = providerFactory(options, Providers);
     }
 
     return provider;

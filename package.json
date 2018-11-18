@@ -16,6 +16,7 @@
   },
   "scripts": {
     "dump": "node --require ts-node/register bin/heroback dump",
+    "restore": "node --require ts-node/register bin/heroback restore",
     "build": "yarn run -s clean && tsc",
     "clean": "rimraf ./dist",
     "test": "jest --config jest.json",

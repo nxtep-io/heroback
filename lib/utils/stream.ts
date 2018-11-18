@@ -1,8 +1,9 @@
 import { ChildProcess, spawn } from 'child_process';
-import * as fs from 'fs';
+import * as fs from 'fs-extra';
 import * as path from 'path';
+import { Stream, Readable } from 'stream';
 
-export type InputStream = { on: Function, pipe: Function };
+export type InputStream = Stream;
 
 export default class StreamUtils {
 
@@ -26,7 +27,7 @@ export default class StreamUtils {
   }
 
   /**
-   * Reads a stream into a string variable asynchronously.
+   * Writes a stream to a file.
    */
   public static async write(stream: InputStream, options: { fileName: string, baseDir: string }): Promise<void> {
     const file = path.resolve(options.baseDir || './', options.fileName)
@@ -36,6 +37,14 @@ export default class StreamUtils {
       writeStream.on('error', error => reject(error));
       writeStream.on('end', () => resolve());
     });
+  }
+
+  /**
+   * Reads a file into a stream.
+   */
+  public static async read(options: { fileName: string, baseDir?: string }): Promise<InputStream> {
+    const file = path.resolve(options.baseDir || './', options.fileName)
+    return fs.createReadStream(file);
   }
 
 }

@@ -1,20 +1,20 @@
 import { BaseError } from "ts-framework-common";
 import { HerobackProvider } from "../base";
 import { FileExporter } from "../exporters";
-import { MongoProvider, PostgresProvider } from "../providers";
 import * as Utils from "../utils";
 import HerobackExporter from "./exporter";
-import { HerobackDumpOptions } from "../dump";
 
-export const providerFactory = (options: HerobackDumpOptions): HerobackProvider => {
+export const providerFactory = (options: { uri: string }, providers: any): HerobackProvider => {
   const uri = Utils.Uri.parse(options.uri);
 
   if (uri.protocol === 'postgresql') {
-    return new PostgresProvider({ uri });
+    return new providers.PostgresProvider({ uri });
   }
+
   if (uri.protocol === 'mongo') {
-    return new MongoProvider({ uri });
+    return new providers.MongoProvider({ uri });
   }
+
   throw new BaseError(`Unknown database provider: "${uri.protocol || undefined}"`, { uri });
 }
 

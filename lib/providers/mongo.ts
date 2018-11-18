@@ -1,7 +1,6 @@
 import { ChildProcess, spawn } from 'child_process';
-import HerobackDump from "../dump";
-import { HerobackProvider, DumpOptions } from '../base';
-import { UriParamsSchema } from '../utils';
+import { DumpOptions, HerobackProvider, RestoreOptions } from '../base';
+import { UriParamsSchema, InputStream } from '../utils';
 
 
 export default class MongoProvider extends HerobackProvider {
@@ -25,12 +24,12 @@ export default class MongoProvider extends HerobackProvider {
       this.uri.database,
     ];
 
-    if(this.uri.host !== this.uriDefaults().host) {
+    if (this.uri.host !== this.uriDefaults().host) {
       args.push(`--host="${this.uri.host}"`);
     }
 
-    if(this.uri.port !== this.uriDefaults().port) {
-      args.push(`--port="${this.uri.port}"`,);
+    if (this.uri.port !== this.uriDefaults().port) {
+      args.push(`--port="${this.uri.port}"`, );
     }
 
     if (this.uri.username) {
@@ -44,7 +43,7 @@ export default class MongoProvider extends HerobackProvider {
     return spawn('mongodump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
   }
 
-  public async restore(dump: HerobackDump): Promise<boolean> {
+  public async restore(dump: InputStream, options: RestoreOptions): Promise<boolean> {
     return false;
   }
 }

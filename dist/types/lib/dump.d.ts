@@ -1,7 +1,6 @@
 /// <reference types="node" />
 import { ChildProcess } from 'child_process';
-import { HerobackProvider } from './base';
-import HerobackExporter, { ExportOptions } from './base/exporter';
+import { ExportOptions, HerobackExporter, HerobackProvider } from './base';
 export declare const CLEAN_REGEX: RegExp;
 export declare const CLEAN_REGEX_SUBSTITUTION = "$1$2$3.$4$5$6.$7000000";
 export interface HerobackDumpOptions {
@@ -18,7 +17,7 @@ export default class HerobackDump {
     protected readonly exporter: HerobackExporter;
     constructor(options: HerobackDumpOptions);
     /**
-     * Initializes an exporter instance based on constructor options.
+     * Initializes a provider instance based on constructor options.
      */
     private static initializeProvider;
     /**

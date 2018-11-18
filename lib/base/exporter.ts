@@ -1,9 +1,5 @@
 import { ChildProcess } from "child_process";
-
-export interface ExportOptions {
-  fileName?: string;
-  baseDir?: string;
-}
+import { ExportOptions } from "./options";
 
 export default abstract class HerobackExporter {
 
