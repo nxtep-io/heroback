@@ -87,7 +87,9 @@ await dump.export();
 console.log('Exported successfully!');
 ```
 <br />
+
 Check the [samples/](https://github.com/nxtep-io/heroback/tree/master/samples) directory in the repository.
+
 <br />
 
 ## License
