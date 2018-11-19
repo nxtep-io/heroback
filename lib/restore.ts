@@ -6,7 +6,7 @@ import * as Providers from './providers';
 import { InputStream } from './utils';
 
 export interface HerobackRestoreOptions {
-  provider: string | HerobackProvider;
+  provider?: HerobackProvider;
   baseDir?: string;
   logger?: Logger;
   gzip?: boolean;

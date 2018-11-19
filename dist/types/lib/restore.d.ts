@@ -4,7 +4,7 @@ import { Logger } from 'ts-framework-common';
 import { HerobackProvider } from './base';
 import { InputStream } from './utils';
 export interface HerobackRestoreOptions {
-    provider: string | HerobackProvider;
+    provider?: HerobackProvider;
     baseDir?: string;
     logger?: Logger;
     gzip?: boolean;

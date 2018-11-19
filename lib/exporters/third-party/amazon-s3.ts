@@ -1,10 +1,10 @@
 import { S3 } from 'aws-sdk';
 import { ChildProcess } from 'child_process';
-import { ExportOptions, HerobackExporter } from '../base';
-import { InputStream } from '../utils';
+import { ExportOptions, HerobackExporter, HerobackExporterOptions } from '../../base';
+import { InputStream } from '../../utils';
 
-export interface AmazonS3ExporterOptions extends ExportOptions {
-  bucketName: string;
+export interface AmazonS3ExporterOptions extends HerobackExporterOptions {
+  bucketName?: string;
 }
 
 // Configure AWS credentials
@@ -16,8 +16,8 @@ export interface AmazonS3ExporterOptions extends ExportOptions {
 export default class AmazonS3Exporter extends HerobackExporter {
   protected readonly s3: AWS.S3;
 
-  constructor(public options: AmazonS3ExporterOptions) {
-    super();
+  constructor(public options: AmazonS3ExporterOptions = {}) {
+    super('amazon', options);
 
     // Define our S3 connection
     // https://aws.amazon.com/sdk-for-node-js/
@@ -29,7 +29,7 @@ export default class AmazonS3Exporter extends HerobackExporter {
     // Upload our gzip stream into S3
     // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
     const response = await this.s3.putObject({
-      Bucket: this.options.bucketName,
+      Bucket: process.env.AMAZON_BUCKET_NAME || this.options.bucketName,
       Key: options.fileName,
       ACL: 'private',
       ContentType: 'text/plain',

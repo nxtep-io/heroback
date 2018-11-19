@@ -9,8 +9,8 @@ export const CLEAN_REGEX = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}).(\d
 export const CLEAN_REGEX_SUBSTITUTION = '$1$2$3.$4$5$6.$7000000';
 
 export interface HerobackDumpOptions {
-  provider: string | HerobackProvider;
   exporter: string | HerobackExporter;
+  provider?: HerobackProvider;
   baseDir?: string;
   logger?: Logger;
   gzip?: boolean;

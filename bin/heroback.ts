@@ -12,7 +12,7 @@ export default class HerobackBin {
     // Prepare dump command
     this.program
       .command('dump <uri>')
-      .option('-d, --dest [path]', 'The destination directory for the dump [Defaults to cwd]')
+      .option('-e, --exporter [exporter]', 'The exporter to be used, defaults to "file"')
       .option('-z, --no-gzip', 'Disables GZIP compression of the dump file')
       .action(async (uri: string, cmd) => this.dump(uri, cmd));
 
@@ -34,7 +34,6 @@ export default class HerobackBin {
         gzip: !cmd.gzip,
         baseDir: cmd.path || process.cwd(),
         exporter: cmd.exporter || 'file',
-        provider: cmd.provider || 'postgres',
       });
 
       // Dump to local file
@@ -55,7 +54,6 @@ export default class HerobackBin {
         uri,
         gzip: !cmd.gzip,
         baseDir: cmd.path || process.cwd(),
-        provider: cmd.provider || 'postgres',
       });
 
       // Restore from local dump

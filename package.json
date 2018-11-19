@@ -38,9 +38,11 @@
     ]
   },
   "dependencies": {
+    "@google-cloud/storage": "^2.3.1",
     "@types/commander": "^2.12.2",
     "@types/node": "^10.12.8",
     "@types/urijs": "^1.15.38",
+    "aws-sdk": "^2.358.0",
     "commander": "^2.19.0",
     "pjson": "^1.0.9",
     "ts-framework-common": "nxtep-io/ts-framework-common#v2",
@@ -65,8 +67,5 @@
     "typedoc": "^0.13.0",
     "typescript": "^3.1.2"
   },
-  "optionalDependencies": {
-    "@google-cloud/storage": "^2.3.1",
-    "aws-sdk": "^2.357.0"
-  }
+  "optionalDependencies": {}
 }

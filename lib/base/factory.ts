@@ -1,6 +1,6 @@
 import { BaseError } from "ts-framework-common";
 import { HerobackProvider } from "../base";
-import { FileExporter } from "../exporters";
+import { AmazonS3Exporter, FileExporter, GoogleGCSExporter } from "../exporters";
 import * as Utils from "../utils";
 import HerobackExporter from "./exporter";
 
@@ -21,6 +21,12 @@ export const providerFactory = (options: { uri: string }, providers: any): Herob
 export const exporterFactory = (name: string): HerobackExporter => {
   if (name === 'file') {
     return new FileExporter();
+  }
+  if (name === 'google') {
+    return new GoogleGCSExporter();
+  }
+  if (name === 'amazon') {
+    return new AmazonS3Exporter();
   }
   throw new BaseError(`Unknown exporter: "${name}"`, { exporter: name });
 }
