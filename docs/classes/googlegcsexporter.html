@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PathUtils | heroback (v3.0.0-alpha.1)</title>
+	<title>GoogleGCSExporter | heroback (v3.0.0-alpha.1)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="pathutils.html">PathUtils</a>
+					<a href="googlegcsexporter.html">GoogleGCSExporter</a>
 				</li>
 			</ul>
-			<h1>Class PathUtils</h1>
+			<h1>Class GoogleGCSExporter</h1>
 		</div>
 	</div>
 </header>
@@ -70,9 +70,141 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">PathUtils</span>
+						<a href="herobackexporter.html" class="tsd-signature-type">HerobackExporter</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">GoogleGCSExporter</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="googlegcsexporter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external"><a href="googlegcsexporter.html#gcs" class="tsd-kind-icon">gcs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="googlegcsexporter.html#logger" class="tsd-kind-icon">logger</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="googlegcsexporter.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="googlegcsexporter.html#options" class="tsd-kind-icon">options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="googlegcsexporter.html#export" class="tsd-kind-icon">export</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>GoogleGCSExporter<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/googlegcsexporteroptions.html" class="tsd-signature-type">GoogleGCSExporterOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="googlegcsexporter.html" class="tsd-signature-type">GoogleGCSExporter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/exporters/third-party/google-gcs.ts#L13">exporters/third-party/google-gcs.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/googlegcsexporteroptions.html" class="tsd-signature-type">GoogleGCSExporterOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="googlegcsexporter.html" class="tsd-signature-type">GoogleGCSExporter</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external">
+					<a name="gcs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> gcs</h3>
+					<div class="tsd-signature tsd-kind-icon">gcs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Storage</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/exporters/third-party/google-gcs.ts#L13">exporters/third-party/google-gcs.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="logger" class="tsd-anchor"></a>
+					<h3>logger</h3>
+					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#logger">logger</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/base/exporter.ts#L11">base/exporter.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#name">name</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/base/exporter.ts#L13">base/exporter.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/googlegcsexporteroptions.html" class="tsd-signature-type">GoogleGCSExporterOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/exporters/third-party/google-gcs.ts#L15">exporters/third-party/google-gcs.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+					<a name="export" class="tsd-anchor"></a>
+					<h3>export</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">export<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#export">export</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/exporters/third-party/google-gcs.ts#L22">exporters/third-party/google-gcs.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dump: <span class="tsd-signature-type">ChildProcess</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -94,9 +226,33 @@
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="fileimporter.html" class="tsd-kind-icon">File<wbr>Importer</a>
 					</li>
-					<li class=" tsd-kind-class tsd-is-external">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
 						<a href="googlegcsexporter.html" class="tsd-kind-icon">GoogleGCSExporter</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="googlegcsexporter.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external">
+								<a href="googlegcsexporter.html#gcs" class="tsd-kind-icon">gcs</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="googlegcsexporter.html#logger" class="tsd-kind-icon">logger</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="googlegcsexporter.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="googlegcsexporter.html#options" class="tsd-kind-icon">options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="googlegcsexporter.html#export" class="tsd-kind-icon">export</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="heroback.html" class="tsd-kind-icon">Heroback</a>
 					</li>
@@ -118,13 +274,9 @@
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="mongoprovider.html" class="tsd-kind-icon">Mongo<wbr>Provider</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class tsd-is-external">
+					<li class=" tsd-kind-class tsd-is-external">
 						<a href="pathutils.html" class="tsd-kind-icon">Path<wbr>Utils</a>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="postgresprovider.html" class="tsd-kind-icon">Postgres<wbr>Provider</a>
 					</li>

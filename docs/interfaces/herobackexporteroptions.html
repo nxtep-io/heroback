@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HerobackRestoreOptions | heroback (v3.0.0-alpha.1)</title>
+	<title>HerobackExporterOptions | heroback (v3.0.0-alpha.1)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="herobackrestoreoptions.html">HerobackRestoreOptions</a>
+					<a href="herobackexporteroptions.html">HerobackExporterOptions</a>
 				</li>
 			</ul>
-			<h1>Interface HerobackRestoreOptions</h1>
+			<h1>Interface HerobackExporterOptions</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,15 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">HerobackRestoreOptions</span>
+						<span class="target">HerobackExporterOptions</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="amazons3exporteroptions.html" class="tsd-signature-type">AmazonS3ExporterOptions</a>
+							</li>
+							<li>
+								<a href="googlegcsexporteroptions.html" class="tsd-signature-type">GoogleGCSExporterOptions</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -81,11 +89,7 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackrestoreoptions.html#basedir" class="tsd-kind-icon">base<wbr>Dir</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackrestoreoptions.html#gzip" class="tsd-kind-icon">gzip</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackrestoreoptions.html#logger" class="tsd-kind-icon">logger</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackrestoreoptions.html#provider" class="tsd-kind-icon">provider</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackrestoreoptions.html#uri" class="tsd-kind-icon">uri</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackexporteroptions.html#logger" class="tsd-kind-icon">logger</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,52 +98,12 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="basedir" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Dir</h3>
-					<div class="tsd-signature tsd-kind-icon">base<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/restore.ts#L10">restore.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="gzip" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> gzip</h3>
-					<div class="tsd-signature tsd-kind-icon">gzip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/restore.ts#L12">restore.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="logger" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> logger</h3>
 					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/restore.ts#L11">restore.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="provider" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> provider</h3>
-					<div class="tsd-signature tsd-kind-icon">provider<span class="tsd-signature-symbol">:</span> <a href="../classes/herobackprovider.html" class="tsd-signature-type">HerobackProvider</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/restore.ts#L9">restore.ts:9</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="uri" class="tsd-anchor"></a>
-					<h3>uri</h3>
-					<div class="tsd-signature tsd-kind-icon">uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/restore.ts#L13">restore.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/e99ed75/lib/base/exporter.ts#L7">base/exporter.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -212,39 +176,27 @@
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="herobackdumpoptions.html" class="tsd-kind-icon">Heroback<wbr>Dump<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="herobackexporteroptions.html" class="tsd-kind-icon">Heroback<wbr>Exporter<wbr>Options</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="herobackexporteroptions.html#logger" class="tsd-kind-icon">logger</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="herobackoptions.html" class="tsd-kind-icon">Heroback<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="herobackprovideroptions.html" class="tsd-kind-icon">Heroback<wbr>Provider<wbr>Options</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-external">
+					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="herobackrestoreoptions.html" class="tsd-kind-icon">Heroback<wbr>Restore<wbr>Options</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackrestoreoptions.html#basedir" class="tsd-kind-icon">base<wbr>Dir</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackrestoreoptions.html#gzip" class="tsd-kind-icon">gzip</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackrestoreoptions.html#logger" class="tsd-kind-icon">logger</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackrestoreoptions.html#provider" class="tsd-kind-icon">provider</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackrestoreoptions.html#uri" class="tsd-kind-icon">uri</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="importoptions.html" class="tsd-kind-icon">Import<wbr>Options</a>
 					</li>

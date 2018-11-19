@@ -5,6 +5,7 @@ import { HerobackExporter, HerobackExporterOptions } from '../../base';
 import { InputStream } from '../../utils';
 export interface GoogleGCSExporterOptions extends HerobackExporterOptions {
     bucketName?: string;
+    fileName?: string;
 }
 export default class GoogleGCSExporter extends HerobackExporter {
     options: GoogleGCSExporterOptions;
