@@ -1,6 +1,10 @@
 # Build Step
 FROM node:10
 
+# Install database dependencies
+RUN apt-get update && apt-get upgrade -y;
+RUN apt-get install -y postgresql-9.4 mongodb;
+
 # Create app directory
 WORKDIR /usr/src/heroback/
 
