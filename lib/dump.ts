@@ -1,6 +1,6 @@
 
 import { ChildProcess } from 'child_process';
-import { Logger } from 'ts-framework-common';
+import { BaseError, Logger } from 'ts-framework-common';
 import { exporterFactory, ExportOptions, HerobackExporter, HerobackProvider, providerFactory } from './base';
 import * as Providers from './providers';
 import * as Utils from './utils';
@@ -104,6 +104,24 @@ export default class HerobackDump {
    */
   async export(options: ExportOptions = {}): Promise<Utils.InputStream> {
     const dump = await this.run();
-    return this.exporter.export(dump, { fileName: this.fileName, ...options });
+
+    const exporter = this.exporter.export(dump.stdout, { fileName: this.fileName, ...options });
+
+    const exit = new Promise((resolve, reject) => {
+      dump.on('error', error => {
+        this.logger.error('Unknown export error', error);
+        reject(error);
+      });
+      dump.on('exit', code => {
+        this.logger.debug('Dump child process exited', { code });
+        if (code !== 0) {
+          reject(new BaseError('Unknown error in dump child process', { code }));
+        } else {
+          resolve();
+        }
+      });
+    })
+
+    return Promise.all([exit, exporter]).then(([a, b]) => b);
   }
 }

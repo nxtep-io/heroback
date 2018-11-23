@@ -11,6 +11,10 @@ export const providerFactory = (options: { uri: string }, providers: any): Herob
     return new providers.PostgresProvider({ uri });
   }
 
+  if (uri.protocol === 'mysql') {
+    return new providers.MySQLProvider({ uri });
+  }
+
   if (uri.protocol === 'mongo') {
     return new providers.MongoProvider({ uri });
   }

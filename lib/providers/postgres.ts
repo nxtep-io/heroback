@@ -38,7 +38,7 @@ export default class PostgresProvider extends HerobackProvider {
         stdio: ['ignore', 'pipe', 'inherit']
       });
     } else {
-      child = spawn('pg_dump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
+      child = spawn('pg_dump', args, { shell: true, stdio: ['ignore', 'pipe', 'inherit'] });
     }
 
     return child;

@@ -25,7 +25,7 @@ export default class AmazonS3Exporter extends HerobackExporter {
     this.s3 = new S3();
   }
 
-  public async export(dump: ChildProcess, options: ExportOptions): Promise<InputStream> {
+  public async export(dump: InputStream, options: ExportOptions): Promise<InputStream> {
     // Upload our gzip stream into S3
     // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
     const response = await this.s3.putObject({
@@ -34,7 +34,7 @@ export default class AmazonS3Exporter extends HerobackExporter {
       ACL: 'private',
       ContentType: 'text/plain',
       ContentEncoding: 'gzip',
-      Body: dump.stdout,
+      Body: dump,
     });
 
     return response.createReadStream();

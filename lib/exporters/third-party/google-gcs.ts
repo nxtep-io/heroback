@@ -19,12 +19,12 @@ export default class GoogleGCSExporter extends HerobackExporter {
     this.gcs = new Storage({ projectId: process.env.GOOGLE_PROJECT_ID });
   }
 
-  public async export(dump: ChildProcess): Promise<InputStream> {
+  public async export(dump: InputStream): Promise<InputStream> {
     const bucket = this.gcs.bucket(process.env.GOOGLE_BUCKET_NAME || this.options.bucketName);
     const file = bucket.file(this.options.fileName || uuid.v4());
     const writeStream = file.createWriteStream();
 
-    dump.stdout.pipe(writeStream);
+    dump.pipe(writeStream);
     return new Promise<InputStream>((resolve, reject) => {
       writeStream.on('error', error => reject(error));
       dump.on('error', error => reject(error));
