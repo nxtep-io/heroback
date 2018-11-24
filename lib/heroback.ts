@@ -16,18 +16,10 @@ export default class Heroback {
   }
 
   public async dump(options: HerobackDumpOptions): Promise<HerobackDump> {
-    return new HerobackDump({
-      gzip: this.options.gzip,
-      baseDir: this.options.baseDir,
-      ...options
-    });
+    return new HerobackDump({ baseDir: this.options.baseDir, ...options });
   }
 
   public async restore(options: HerobackRestoreOptions): Promise<HerobackRestore> {
-    return new HerobackRestore({
-      gzip: this.options.gzip,
-      baseDir: this.options.baseDir,
-      ...options
-    });
+    return new HerobackRestore({ baseDir: this.options.baseDir, ...options });
   }
 }

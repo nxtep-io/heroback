@@ -2,6 +2,7 @@
 import { ChildProcess } from 'child_process';
 import { BaseError, Logger } from 'ts-framework-common';
 import { exporterFactory, ExportOptions, HerobackExporter, HerobackProvider, providerFactory } from './base';
+import { FileExporter } from './exporters';
 import * as Providers from './providers';
 import * as Utils from './utils';
 
@@ -9,11 +10,32 @@ export const CLEAN_REGEX = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}).(\d
 export const CLEAN_REGEX_SUBSTITUTION = '$1$2$3.$4$5$6.$7000000';
 
 export interface HerobackDumpOptions {
+  /** 
+   * Deletes file generated if dumps fails, defaults to "true". 
+   * <br />
+   * **Notice:** This is only working for the File exporter.
+   */
+  deleteFileOnFail?: boolean;
+
+  /** 
+   * The exporter to be used in dump processing, defaults to "file"
+   */
   exporter: string | HerobackExporter;
+
+  /**
+   * The dump provider to be used.
+   */
   provider?: HerobackProvider;
+
+  /**
+   * The basedir for the file in exporter, defauls to './'.
+   */
   baseDir?: string;
+
+  /**
+   * The logger instace to be used.
+   */
   logger?: Logger;
-  gzip?: boolean;
   uri: string;
 }
 
@@ -65,9 +87,6 @@ export default class HerobackDump {
    */
   get fileName(): string {
     const clean = this.timestamp.toISOString().replace(CLEAN_REGEX, CLEAN_REGEX_SUBSTITUTION);
-    if (this.options.gzip) {
-      return `${clean}${this.provider.ext}.gz`;
-    }
     return `${clean}.dump${this.provider.ext}`;
   }
 
@@ -79,15 +98,7 @@ export default class HerobackDump {
    * For a higher level interface, check ```dump.export()``` and ```dump.raw()```.
    */
   async run(): Promise<ChildProcess> {
-    const dump = await this.provider.dump();
-
-    // Optionally, compress with GZIP
-    if (this.options.gzip) {
-      const gzipChild = Utils.Stream.gzip(dump.stdout);
-      return gzipChild;
-    }
-
-    return dump;
+    return this.provider.dump();
   }
 
   /**
@@ -105,16 +116,21 @@ export default class HerobackDump {
   async export(options: ExportOptions = {}): Promise<Utils.InputStream> {
     const dump = await this.run();
 
+    // Grabs exporting promise to be awaited
     const exporter = this.exporter.export(dump.stdout, { fileName: this.fileName, ...options });
 
+    // Wrap dump child process in a promise to handle failure properly
     const exit = new Promise((resolve, reject) => {
       dump.on('error', error => {
         this.logger.error('Unknown export error', error);
         reject(error);
       });
-      dump.on('exit', code => {
+      dump.on('exit', async code => {
         this.logger.debug('Dump child process exited', { code });
         if (code !== 0) {
+          if (this.exporter instanceof FileExporter && this.options.deleteFileOnFail !== false) {
+            await Utils.File.delete({ fileName: this.fileName, baseDir: this.options.baseDir })
+          }
           reject(new BaseError('Unknown error in dump child process', { code }));
         } else {
           resolve();
@@ -122,6 +138,9 @@ export default class HerobackDump {
       });
     })
 
-    return Promise.all([exit, exporter]).then(([a, b]) => b);
+    // Await for both of them in parallel
+    return Promise
+      .all([exit, exporter])
+      .then(([exitResult, exporterResult]) => exporterResult);
   }
 }

@@ -3,6 +3,7 @@
 import * as program from 'commander';
 import * as Package from 'pjson';
 import Heroback, { Stream } from '../lib';
+import { BaseError } from 'ts-framework-common';
 
 export default class HerobackBin {
   protected static readonly heroback = new Heroback();
@@ -31,7 +32,6 @@ export default class HerobackBin {
     try {
       const dump = await this.heroback.dump({
         uri,
-        gzip: !cmd.gzip,
         baseDir: cmd.path || process.cwd(),
         exporter: cmd.exporter || 'file',
       });
@@ -43,7 +43,7 @@ export default class HerobackBin {
       process.exit(0);
     } catch (exception) {
       this.heroback.logger.error(exception.message);
-      process.exit(-1);
+      process.exit(exception.details.code);
     }
   }
 
