@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HerobackDumpOptions | heroback (v3.0.0-alpha.1)</title>
+	<title>FileUtils | heroback (v3.0.0-alpha.1)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="herobackdumpoptions.html">HerobackDumpOptions</a>
+					<a href="fileutils.html">FileUtils</a>
 				</li>
 			</ul>
-			<h1>Interface HerobackDumpOptions</h1>
+			<h1>Class FileUtils</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">HerobackDumpOptions</span>
+						<span class="target">FileUtils</span>
 					</li>
 				</ul>
 			</section>
@@ -79,107 +79,46 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-external">
-							<h3>Properties</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackdumpoptions.html#basedir" class="tsd-kind-icon">base<wbr>Dir</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackdumpoptions.html#deletefileonfail" class="tsd-kind-icon">delete<wbr>File<wbr>OnFail</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackdumpoptions.html#exporter" class="tsd-kind-icon">exporter</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackdumpoptions.html#logger" class="tsd-kind-icon">logger</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackdumpoptions.html#provider" class="tsd-kind-icon">provider</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="herobackdumpoptions.html#uri" class="tsd-kind-icon">uri</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="fileutils.html#delete" class="tsd-kind-icon">delete</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="basedir" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Dir</h3>
-					<div class="tsd-signature tsd-kind-icon">base<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/dump.ts#L33">dump.ts:33</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The basedir for the file in exporter, defauls to &#39;./&#39;.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="deletefileonfail" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> delete<wbr>File<wbr>OnFail</h3>
-					<div class="tsd-signature tsd-kind-icon">delete<wbr>File<wbr>OnFail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/dump.ts#L18">dump.ts:18</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Deletes file generated if dumps fails, defaults to &quot;true&quot;.
-								<br />
-							<strong>Notice:</strong> This is only working for the File exporter.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="exporter" class="tsd-anchor"></a>
-					<h3>exporter</h3>
-					<div class="tsd-signature tsd-kind-icon">exporter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../classes/herobackexporter.html" class="tsd-signature-type">HerobackExporter</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/dump.ts#L23">dump.ts:23</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The exporter to be used in dump processing, defaults to &quot;file&quot;</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="logger" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> logger</h3>
-					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/dump.ts#L38">dump.ts:38</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The logger instace to be used.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="provider" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> provider</h3>
-					<div class="tsd-signature tsd-kind-icon">provider<span class="tsd-signature-symbol">:</span> <a href="../classes/herobackprovider.html" class="tsd-signature-type">HerobackProvider</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/dump.ts#L28">dump.ts:28</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The dump provider to be used.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="uri" class="tsd-anchor"></a>
-					<h3>uri</h3>
-					<div class="tsd-signature tsd-kind-icon">uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/dump.ts#L39">dump.ts:39</a></li>
-						</ul>
-					</aside>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="delete" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> delete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/utils/file.ts#L5">utils/file.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> base<wbr>Dir<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>file<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -194,109 +133,94 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/amazons3exporter.html" class="tsd-kind-icon">Amazon<wbr>S3Exporter</a>
+						<a href="amazons3exporter.html" class="tsd-kind-icon">Amazon<wbr>S3Exporter</a>
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/fileexporter.html" class="tsd-kind-icon">File<wbr>Exporter</a>
+						<a href="fileexporter.html" class="tsd-kind-icon">File<wbr>Exporter</a>
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/fileimporter.html" class="tsd-kind-icon">File<wbr>Importer</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/fileutils.html" class="tsd-kind-icon">File<wbr>Utils</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/googlegcsexporter.html" class="tsd-kind-icon">GoogleGCSExporter</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/heroback.html" class="tsd-kind-icon">Heroback</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/herobackdump.html" class="tsd-kind-icon">Heroback<wbr>Dump</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/herobackexporter.html" class="tsd-kind-icon">Heroback<wbr>Exporter</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/herobackimporter.html" class="tsd-kind-icon">Heroback<wbr>Importer</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/herobackprovider.html" class="tsd-kind-icon">Heroback<wbr>Provider</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/herobackrestore.html" class="tsd-kind-icon">Heroback<wbr>Restore</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/mongoprovider.html" class="tsd-kind-icon">Mongo<wbr>Provider</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/mysqlprovider.html" class="tsd-kind-icon">MySQLProvider</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/pathutils.html" class="tsd-kind-icon">Path<wbr>Utils</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/postgresprovider.html" class="tsd-kind-icon">Postgres<wbr>Provider</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/streamutils.html" class="tsd-kind-icon">Stream<wbr>Utils</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="../classes/uriutils.html" class="tsd-kind-icon">Uri<wbr>Utils</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="amazons3exporteroptions.html" class="tsd-kind-icon">Amazon<wbr>S3Exporter<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="exportoptions.html" class="tsd-kind-icon">Export<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="googlegcsexporteroptions.html" class="tsd-kind-icon">GoogleGCSExporter<wbr>Options</a>
+						<a href="fileimporter.html" class="tsd-kind-icon">File<wbr>Importer</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-external">
-						<a href="herobackdumpoptions.html" class="tsd-kind-icon">Heroback<wbr>Dump<wbr>Options</a>
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="fileutils.html" class="tsd-kind-icon">File<wbr>Utils</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackdumpoptions.html#basedir" class="tsd-kind-icon">base<wbr>Dir</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackdumpoptions.html#deletefileonfail" class="tsd-kind-icon">delete<wbr>File<wbr>OnFail</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackdumpoptions.html#exporter" class="tsd-kind-icon">exporter</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackdumpoptions.html#logger" class="tsd-kind-icon">logger</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackdumpoptions.html#provider" class="tsd-kind-icon">provider</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="herobackdumpoptions.html#uri" class="tsd-kind-icon">uri</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="fileutils.html#delete" class="tsd-kind-icon">delete</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="herobackexporteroptions.html" class="tsd-kind-icon">Heroback<wbr>Exporter<wbr>Options</a>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="googlegcsexporter.html" class="tsd-kind-icon">GoogleGCSExporter</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="heroback.html" class="tsd-kind-icon">Heroback</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="herobackdump.html" class="tsd-kind-icon">Heroback<wbr>Dump</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="herobackexporter.html" class="tsd-kind-icon">Heroback<wbr>Exporter</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="herobackimporter.html" class="tsd-kind-icon">Heroback<wbr>Importer</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="herobackprovider.html" class="tsd-kind-icon">Heroback<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="herobackrestore.html" class="tsd-kind-icon">Heroback<wbr>Restore</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="mongoprovider.html" class="tsd-kind-icon">Mongo<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="mysqlprovider.html" class="tsd-kind-icon">MySQLProvider</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="pathutils.html" class="tsd-kind-icon">Path<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="postgresprovider.html" class="tsd-kind-icon">Postgres<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="streamutils.html" class="tsd-kind-icon">Stream<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="uriutils.html" class="tsd-kind-icon">Uri<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="herobackoptions.html" class="tsd-kind-icon">Heroback<wbr>Options</a>
+						<a href="../interfaces/amazons3exporteroptions.html" class="tsd-kind-icon">Amazon<wbr>S3Exporter<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="herobackprovideroptions.html" class="tsd-kind-icon">Heroback<wbr>Provider<wbr>Options</a>
+						<a href="../interfaces/exportoptions.html" class="tsd-kind-icon">Export<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="herobackrestoreoptions.html" class="tsd-kind-icon">Heroback<wbr>Restore<wbr>Options</a>
+						<a href="../interfaces/googlegcsexporteroptions.html" class="tsd-kind-icon">GoogleGCSExporter<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="importoptions.html" class="tsd-kind-icon">Import<wbr>Options</a>
+						<a href="../interfaces/herobackdumpoptions.html" class="tsd-kind-icon">Heroback<wbr>Dump<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="uriparamsschema.html" class="tsd-kind-icon">Uri<wbr>Params<wbr>Schema</a>
+						<a href="../interfaces/herobackexporteroptions.html" class="tsd-kind-icon">Heroback<wbr>Exporter<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="../interfaces/herobackoptions.html" class="tsd-kind-icon">Heroback<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="../interfaces/herobackprovideroptions.html" class="tsd-kind-icon">Heroback<wbr>Provider<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="../interfaces/herobackrestoreoptions.html" class="tsd-kind-icon">Heroback<wbr>Restore<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="../interfaces/importoptions.html" class="tsd-kind-icon">Import<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="../interfaces/uriparamsschema.html" class="tsd-kind-icon">Uri<wbr>Params<wbr>Schema</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="../globals.html#inputstream" class="tsd-kind-icon">Input<wbr>Stream</a>

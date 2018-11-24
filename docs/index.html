@@ -88,6 +88,15 @@ heroback dump postgresql://localhost/<span class="hljs-built_in">test</span>
 heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.sql"</span> <span class="hljs-string">"postgresql://localhost/test"</span>;</code></pre>
 				<br />
 				<ul>
+					<li><strong>MySQL / MariaDB</strong>:</li>
+				</ul>
+				<pre><code class="language-bash"><span class="hljs-comment"># Dumps to local file</span>
+heroback dump mysql://localhost/<span class="hljs-built_in">test</span>
+
+<span class="hljs-comment"># Restores from local file</span>
+heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.sql"</span> <span class="hljs-string">"mysql://localhost/test"</span>;</code></pre>
+				<br />
+				<ul>
 					<li><strong>MongoDB</strong>:</li>
 				</ul>
 				<pre><code class="language-bash"><span class="hljs-comment"># Dumps to local file</span>
@@ -109,14 +118,14 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 					</li>
 				</ul>
 				<br />
-				Coming soon: MySQL, MariaDB and Elasticsearch.
+				Coming soon: Elasticsearch.
 				<br />
 				<h2 id="programmatic-usage">Programmatic Usage</h2>
 				<p>You can use Heroback under the hood in your NodeJS / Typescript projects.</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> Heroback <span class="hljs-keyword">from</span> <span class="hljs-string">'heroback'</span>;
 
 <span class="hljs-comment">// Prepare a new heroback instance</span>
-<span class="hljs-keyword">const</span> heroback = <span class="hljs-keyword">new</span> Heroback({ gzip: <span class="hljs-literal">true</span> });
+<span class="hljs-keyword">const</span> heroback = <span class="hljs-keyword">new</span> Heroback();
 
 <span class="hljs-comment">// Prepares to dump database to a local file</span>
 <span class="hljs-keyword">const</span> dump = <span class="hljs-keyword">await</span> heroback.dump({
@@ -128,7 +137,7 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 <span class="hljs-keyword">await</span> dump.export();
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Exported successfully!'</span>);</code></pre>
 				<br />
-				Check the [samples/](https://github.com/nxtep-io/heroback/tree/master/samples) directory in the repository.
+				<p>Check the <a href="https://github.com/nxtep-io/heroback/tree/master/samples">samples/</a> directory in the repository.</p>
 				<br />
 				<h2 id="license">License</h2>
 				<p>The project is licensed under the <a href="./LICENSE.md">MIT License</a>.</p>
@@ -154,6 +163,9 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 						<a href="classes/fileimporter.html" class="tsd-kind-icon">File<wbr>Importer</a>
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/fileutils.html" class="tsd-kind-icon">File<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/googlegcsexporter.html" class="tsd-kind-icon">GoogleGCSExporter</a>
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
@@ -176,6 +188,9 @@ heroback restore <span class="hljs-string">"20181118.052834.298000000.dump.archi
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/mongoprovider.html" class="tsd-kind-icon">Mongo<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/mysqlprovider.html" class="tsd-kind-icon">MySQLProvider</a>
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/pathutils.html" class="tsd-kind-icon">Path<wbr>Utils</a>

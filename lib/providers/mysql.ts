@@ -32,7 +32,6 @@ export default class MySQLProvider extends HerobackProvider {
       args.push(`--password=${this.uri.password}`);
     }
 
-
     this.logger.debug('Dumping using "mysqldump" binary', { args });
     return spawn('mysqldump', args, { stdio: ['ignore', 'pipe', 'inherit'] });
   }
@@ -41,6 +40,24 @@ export default class MySQLProvider extends HerobackProvider {
    * Restores the dump to the desired database using apsql child process.
    */
   public async restore(dump: Utils.InputStream): Promise<ChildProcess> {
-    throw new Error("Method not implemented for MySQL");
+    const args = [
+      `--host=${this.uri.host}`,
+      `--port=${this.uri.port}`,
+      `${this.uri.database}`,
+    ];
+
+    if (this.uri.username) {
+      args.push(`--user=${this.uri.username}`);
+    }
+
+    if (this.uri.password) {
+      args.push(`--password=${this.uri.password}`);
+    }
+
+    this.logger.debug('Restoring using "mysqlimport" binary', { args });
+    const child = spawn('mysqlimport', args, { stdio: ['pipe', 'pipe', 'inherit'] });
+
+    dump.pipe(child.stdin);
+    return child;
   }
 }

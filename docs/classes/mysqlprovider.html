@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AmazonS3Exporter | heroback (v3.0.0-alpha.1)</title>
+	<title>MySQLProvider | heroback (v3.0.0-alpha.1)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="amazons3exporter.html">AmazonS3Exporter</a>
+					<a href="mysqlprovider.html">MySQLProvider</a>
 				</li>
 			</ul>
-			<h1>Class AmazonS3Exporter</h1>
+			<h1>Class MySQLProvider</h1>
 		</div>
 	</div>
 </header>
@@ -70,10 +70,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="herobackexporter.html" class="tsd-signature-type">HerobackExporter</a>
+						<a href="herobackprovider.html" class="tsd-signature-type">HerobackProvider</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">AmazonS3Exporter</span>
+								<span class="target">MySQLProvider</span>
 							</li>
 						</ul>
 					</li>
@@ -83,128 +83,211 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-external">
+						<section class="tsd-index-section tsd-is-inherited tsd-is-external">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="amazons3exporter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="mysqlprovider.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="amazons3exporter.html#logger" class="tsd-kind-icon">logger</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="amazons3exporter.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="amazons3exporter.html#options" class="tsd-kind-icon">options</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external"><a href="amazons3exporter.html#s3" class="tsd-kind-icon">s3</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mysqlprovider.html#ext" class="tsd-kind-icon">ext</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="mysqlprovider.html#logger" class="tsd-kind-icon">logger</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="mysqlprovider.html#options" class="tsd-kind-icon">options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited tsd-is-external">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="mysqlprovider.html#uri" class="tsd-kind-icon">uri</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="amazons3exporter.html#export" class="tsd-kind-icon">export</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mysqlprovider.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="mysqlprovider.html#migrate" class="tsd-kind-icon">migrate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mysqlprovider.html#restore" class="tsd-kind-icon">restore</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="mysqlprovider.html#uridefaults" class="tsd-kind-icon">uri<wbr>Defaults</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-external">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Amazon<wbr>S3Exporter<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/amazons3exporteroptions.html" class="tsd-signature-type">AmazonS3ExporterOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="amazons3exporter.html" class="tsd-signature-type">AmazonS3Exporter</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>MySQLProvider<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/herobackprovideroptions.html" class="tsd-signature-type">HerobackProviderOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mysqlprovider.html" class="tsd-signature-type">MySQLProvider</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#constructor">constructor</a></p>
+								<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/exporters/third-party/amazon-s3.ts#L17">exporters/third-party/amazon-s3.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/provider.ts#L12">base/provider.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/amazons3exporteroptions.html" class="tsd-signature-type">AmazonS3ExporterOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5>options: <a href="../interfaces/herobackprovideroptions.html" class="tsd-signature-type">HerobackProviderOptions</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="amazons3exporter.html" class="tsd-signature-type">AmazonS3Exporter</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="mysqlprovider.html" class="tsd-signature-type">MySQLProvider</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+					<a name="ext" class="tsd-anchor"></a>
+					<h3>ext</h3>
+					<div class="tsd-signature tsd-kind-icon">ext<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;.sql&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#ext">ext</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/providers/mysql.ts#L7">providers/mysql.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
 					<a name="logger" class="tsd-anchor"></a>
 					<h3>logger</h3>
 					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#logger">logger</a></p>
+						<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#logger">logger</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/exporter.ts#L10">base/exporter.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/provider.ts#L11">base/provider.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#name">name</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/exporter.ts#L12">base/exporter.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="options" class="tsd-anchor"></a>
 					<h3>options</h3>
-					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/amazons3exporteroptions.html" class="tsd-signature-type">AmazonS3ExporterOptions</a></div>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/herobackprovideroptions.html" class="tsd-signature-type">HerobackProviderOptions</a></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#options">options</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/exporters/third-party/amazon-s3.ts#L19">exporters/third-party/amazon-s3.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/provider.ts#L14">base/provider.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external">
-					<a name="s3" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> s3</h3>
-					<div class="tsd-signature tsd-kind-icon">s3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">S3</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/exporters/third-party/amazon-s3.ts#L17">exporters/third-party/amazon-s3.ts:17</a></li>
-						</ul>
-					</aside>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-external">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="uri" class="tsd-anchor"></a>
+					<h3>uri</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> uri<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#uri">uri</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/provider.ts#L25">base/provider.ts:25</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-					<a name="export" class="tsd-anchor"></a>
-					<h3>export</h3>
+					<a name="dump" class="tsd-anchor"></a>
+					<h3>dump</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">export<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/exportoptions.html" class="tsd-signature-type">ExportOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="herobackexporter.html">HerobackExporter</a>.<a href="herobackexporter.html#export">export</a></p>
+								<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/exporters/third-party/amazon-s3.ts#L28">exporters/third-party/amazon-s3.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/providers/mysql.ts#L20">providers/mysql.ts:20</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Dumps the desired database using mysqldump child process.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="migrate" class="tsd-anchor"></a>
+					<h3>migrate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">migrate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#migrate">migrate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/base/provider.ts#L35">base/provider.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+					<a name="restore" class="tsd-anchor"></a>
+					<h3>restore</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Utils.InputStream</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#restore">restore</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/providers/mysql.ts#L42">providers/mysql.ts:42</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Restores the dump to the desired database using apsql child process.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>dump: <a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a></h5>
-								</li>
-								<li>
-									<h5>options: <a href="../interfaces/exportoptions.html" class="tsd-signature-type">ExportOptions</a></h5>
+									<h5>dump: <span class="tsd-signature-type">Utils.InputStream</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#inputstream" class="tsd-signature-type">InputStream</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChildProcess</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+					<a name="uridefaults" class="tsd-anchor"></a>
+					<h3>uri<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">uri<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/uriparamsschema.html" class="tsd-signature-type">UriParamsSchema</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="herobackprovider.html">HerobackProvider</a>.<a href="herobackprovider.html#uridefaults">uriDefaults</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/nxtep-io/heroback/blob/9c7d816/lib/providers/mysql.ts#L9">providers/mysql.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/uriparamsschema.html" class="tsd-signature-type">UriParamsSchema</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -220,33 +303,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class tsd-is-external">
+					<li class=" tsd-kind-class tsd-is-external">
 						<a href="amazons3exporter.html" class="tsd-kind-icon">Amazon<wbr>S3Exporter</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-								<a href="amazons3exporter.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-								<a href="amazons3exporter.html#logger" class="tsd-kind-icon">logger</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-								<a href="amazons3exporter.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="amazons3exporter.html#options" class="tsd-kind-icon">options</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external">
-								<a href="amazons3exporter.html#s3" class="tsd-kind-icon">s3</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-								<a href="amazons3exporter.html#export" class="tsd-kind-icon">export</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="fileexporter.html" class="tsd-kind-icon">File<wbr>Exporter</a>
 					</li>
@@ -280,9 +339,42 @@
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="mongoprovider.html" class="tsd-kind-icon">Mongo<wbr>Provider</a>
 					</li>
-					<li class=" tsd-kind-class tsd-is-external">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
 						<a href="mysqlprovider.html" class="tsd-kind-icon">MySQLProvider</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="mysqlprovider.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="mysqlprovider.html#ext" class="tsd-kind-icon">ext</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="mysqlprovider.html#logger" class="tsd-kind-icon">logger</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="mysqlprovider.html#options" class="tsd-kind-icon">options</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="mysqlprovider.html#uri" class="tsd-kind-icon">uri</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="mysqlprovider.html#dump" class="tsd-kind-icon">dump</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="mysqlprovider.html#migrate" class="tsd-kind-icon">migrate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="mysqlprovider.html#restore" class="tsd-kind-icon">restore</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="mysqlprovider.html#uridefaults" class="tsd-kind-icon">uri<wbr>Defaults</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="pathutils.html" class="tsd-kind-icon">Path<wbr>Utils</a>
 					</li>
