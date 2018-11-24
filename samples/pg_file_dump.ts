@@ -7,8 +7,7 @@ export default class HerobackSample {
     // Prepare a heroback dump instance
     const dump = await heroback.dump({
       exporter: 'file',
-      provider: 'postgres',
-      uri: 'bitcapital_core',
+      uri: 'postgres://localhost/test',
     });
 
     // Dump to local file
