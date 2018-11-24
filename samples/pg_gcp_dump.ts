@@ -7,8 +7,7 @@ export default class HerobackSample {
 
     // Prepare a heroback dump instance
     const dump = await heroback.dump({
-      provider: 'postgres',
-      uri: 'bitcapital_core',
+      uri: 'postgres://localhost/test',
 
       // Remember to set the required ENV variables for the official GCS SDK
       exporter: new GoogleGCSExporter({ bucketName: 'sample-pg' }),

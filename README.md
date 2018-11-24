@@ -37,6 +37,17 @@ heroback restore "20181118.052834.298000000.dump.sql" "postgresql://localhost/te
 ```
 <br />
 
+* **MySQL / MariaDB**:
+
+```bash
+# Dumps to local file
+heroback dump mysql://localhost/test
+
+# Restores from local file
+heroback restore "20181118.052834.298000000.dump.sql" "mysql://localhost/test";
+```
+<br />
+
 * **MongoDB**:
 
 ```bash
@@ -63,7 +74,7 @@ Heroback will try to understand the supplied connection URI to use one of the av
     This exporter depeneds on the ```@google-cloud/storage``` module and its environment variables.
 
 <br />
-Coming soon: MySQL, MariaDB and Elasticsearch.
+Coming soon: Elasticsearch.
 <br />
 
 ## Programmatic Usage
@@ -74,7 +85,7 @@ You can use Heroback under the hood in your NodeJS / Typescript projects.
 import Heroback from 'heroback';
 
 // Prepare a new heroback instance
-const heroback = new Heroback({ gzip: true });
+const heroback = new Heroback();
 
 // Prepares to dump database to a local file
 const dump = await heroback.dump({
