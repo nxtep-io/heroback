@@ -1,15 +1,15 @@
-import { Logger } from 'ts-framework-common';
+import { Logger, LoggerInstance } from 'ts-framework-common';
 import HerobackDump, { HerobackDumpOptions } from './dump';
 import HerobackRestore, { HerobackRestoreOptions } from './restore';
 
 export interface HerobackOptions {
-  logger?: Logger;
+  logger?: LoggerInstance;
   gzip?: boolean;
   baseDir?: string;
 }
 
 export default class Heroback {
-  public readonly logger: Logger;
+  public readonly logger: LoggerInstance;
 
   constructor(public options: HerobackOptions = {}) {
     this.logger = options.logger || Logger.getInstance();

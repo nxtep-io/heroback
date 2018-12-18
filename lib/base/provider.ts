@@ -1,14 +1,14 @@
 import { ChildProcess } from "child_process";
-import { Logger } from 'ts-framework-common';
+import { Logger, LoggerInstance } from 'ts-framework-common';
 import * as Utils from '../utils';
 
 export interface HerobackProviderOptions {
   uri: Utils.UriParamsSchema;
-  logger?: Logger;
+  logger?: LoggerInstance;
 }
 
 export default abstract class HerobackProvider {
-  public readonly logger: Logger;
+  public readonly logger: LoggerInstance;
   public abstract readonly ext: string;
 
   constructor(public options: HerobackProviderOptions) {

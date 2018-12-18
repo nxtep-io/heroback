@@ -1,6 +1,6 @@
 
 import { ChildProcess } from 'child_process';
-import { BaseError, Logger } from 'ts-framework-common';
+import { BaseError, Logger, LoggerInstance } from 'ts-framework-common';
 import { exporterFactory, ExportOptions, HerobackExporter, HerobackProvider, providerFactory } from './base';
 import { FileExporter } from './exporters';
 import * as Providers from './providers';
@@ -35,12 +35,12 @@ export interface HerobackDumpOptions {
   /**
    * The logger instace to be used.
    */
-  logger?: Logger;
+  logger?: LoggerInstance;
   uri: string;
 }
 
 export default class HerobackDump {
-  protected readonly logger: Logger;
+  protected readonly logger: LoggerInstance;
   protected readonly timestamp: Date;
   protected readonly provider: HerobackProvider;
   protected readonly exporter: HerobackExporter;

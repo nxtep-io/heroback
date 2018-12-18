@@ -45,7 +45,7 @@
     "aws-sdk": "^2.358.0",
     "commander": "^2.19.0",
     "pjson": "^1.0.9",
-    "ts-framework-common": "nxtep-io/ts-framework-common#v2",
+    "ts-framework-common": "nxtep-io/ts-framework-common#2.3.0",
     "urijs": "^1.19.1"
   },
   "devDependencies": {
@@ -53,7 +53,7 @@
     "husky": "^1.0.0-rc.13",
     "jest": "^23.4.2",
     "lint-staged": "^7.2.0",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.18.9",
     "nxtep-typedoc-theme": "nxtep-io/nxtep-typedoc-theme",
     "prettier": "^1.14.0",
     "rimraf": "^2.6.2",

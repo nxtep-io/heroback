@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { ChildProcess } from 'child_process';
-import { Logger } from 'ts-framework-common';
+import { LoggerInstance } from 'ts-framework-common';
 import { ExportOptions, HerobackExporter, HerobackProvider } from './base';
 import * as Utils from './utils';
 export declare const CLEAN_REGEX: RegExp;
@@ -27,12 +27,12 @@ export interface HerobackDumpOptions {
     /**
      * The logger instace to be used.
      */
-    logger?: Logger;
+    logger?: LoggerInstance;
     uri: string;
 }
 export default class HerobackDump {
     readonly options: HerobackDumpOptions;
-    protected readonly logger: Logger;
+    protected readonly logger: LoggerInstance;
     protected readonly timestamp: Date;
     protected readonly provider: HerobackProvider;
     protected readonly exporter: HerobackExporter;

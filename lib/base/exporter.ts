@@ -1,13 +1,13 @@
-import { Logger } from "ts-framework-common";
+import { Logger, LoggerInstance } from "ts-framework-common";
 import { InputStream } from "../utils";
 import { ExportOptions } from "./options";
 
 export interface HerobackExporterOptions {
-  logger?: Logger
+  logger?: LoggerInstance;
 }
 
 export default abstract class HerobackExporter {
-  public readonly logger: Logger;
+  public readonly logger: LoggerInstance;
 
   constructor(public readonly name: string, options: HerobackExporterOptions = {}) {
     this.logger = options.logger || Logger.getInstance();
