@@ -18,6 +18,7 @@ export default abstract class HerobackProvider {
         username: string;
         password: string;
         protocol: string;
+        raw: string;
     };
     abstract uriDefaults(): Partial<Utils.UriParamsSchema>;
     abstract dump(): Promise<ChildProcess>;

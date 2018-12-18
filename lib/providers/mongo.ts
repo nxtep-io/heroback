@@ -8,7 +8,7 @@ export default class MongoProvider extends HerobackProvider {
 
   public uriDefaults(): Partial<UriParamsSchema> {
     return {
-      protocol: 'mongo',
+      protocol: 'mongodb',
       host: 'localhost',
       port: '27017',
     }
@@ -18,26 +18,10 @@ export default class MongoProvider extends HerobackProvider {
    * Dumps the desired database using mongodump child process.
    */
   public async dump(): Promise<ChildProcess> {
-    const args = [
-      '--archive',
-      `-d`,
-      this.uri.database,
-    ];
+    const args = ['--archive'];
 
     if (this.uri.host !== this.uriDefaults().host) {
-      args.push(`--host="${this.uri.host}"`);
-    }
-
-    if (this.uri.port !== this.uriDefaults().port) {
-      args.push(`--port="${this.uri.port}"`, );
-    }
-
-    if (this.uri.username) {
-      args.push('-u', this.uri.username);
-    }
-
-    if (this.uri.password) {
-      args.push('-p', this.uri.password);
+      args.push(`--uri="${this.uri.raw}"`);
     }
 
     this.logger.debug('Dumping using "mongodump" binary', { args });

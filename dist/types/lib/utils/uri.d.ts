@@ -5,6 +5,7 @@ export interface UriParamsSchema {
     username: string;
     password: string;
     protocol: string;
+    raw: string;
 }
 export default class UriUtils {
     static parse(input: string, defaults?: Partial<UriParamsSchema>): UriParamsSchema;

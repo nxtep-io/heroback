@@ -7,6 +7,7 @@ export interface UriParamsSchema {
   username: string,
   password: string,
   protocol: string,
+  raw: string,
 };
 
 export default class UriUtils {
@@ -18,6 +19,7 @@ export default class UriUtils {
 
     const uri = new URI(input);
     const results = {
+      raw: uri.toString(),
       host: uri.host() || defaults.host,
       port: uri.port() || defaults.port,
       protocol: uri.protocol() || defaults.protocol,
