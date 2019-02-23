@@ -1,6 +1,6 @@
 {
   "name": "heroback",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A database agnostic backup tool",
   "author": "Luis Brito <luis@nxtep.io>",
   "license": "MIT",
@@ -44,6 +44,7 @@
     "@types/urijs": "^1.15.38",
     "aws-sdk": "^2.358.0",
     "commander": "^2.19.0",
+    "fs-extra": "^7.0.1",
     "pjson": "^1.0.9",
     "ts-framework-common": "nxtep-io/ts-framework-common#2.3.0",
     "urijs": "^1.19.1"
